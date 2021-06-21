@@ -3,6 +3,8 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './container/Home/Home';
 import Login from './container/Login/Login';
+import UserProfile from './container/UserProfile/UserProfile';
+import AdminHome from './container/AdminHome/AdminHome';
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         
           <Route path="/" exact component={Home}/>
           <Route path="/login" exact component={Login}/>
-
+          <Route path="/profile" exact component={UserProfile}/>
+          <Route path="/adminhome" exact component={AdminHome}/>
         
         </Switch>
         
