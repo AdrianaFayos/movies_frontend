@@ -1,0 +1,18 @@
+
+.box1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding-top: 2em;
+    height: 20em;
+    width: 30em;
+    background-color: rgb(59, 57, 57);
+}
+
+.form1 {
+    display: flex; 
+    flex-direction: column;
+
+}
