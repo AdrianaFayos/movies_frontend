@@ -1,0 +1,40 @@
+.headerContainer {
+    height:  6em;
+    width: 100vw;
+    background-color:#cfdcec;
+    color: rgb(36, 34, 34);    
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logoHeader {
+    margin-left: 3em;
+    background-color: black;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+}
+
+.headerUser{ 
+    margin-right: 3em;
+    width: 20em;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linkLogout {
+    margin: 1em;
+    transition: 0.2s;
+}
+
+
+.linkLogout:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.2s;
+}

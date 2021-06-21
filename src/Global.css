@@ -67,6 +67,7 @@
 /* BODY */
 body {
     background-color: var(--pal1Col2);
+    color: white;
 }
 
 /* CARD */
@@ -83,6 +84,15 @@ body {
     width: 9em;
     height: 3em;
 
+}
+
+.vista {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .centradoColumna {
