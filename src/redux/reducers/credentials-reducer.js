@@ -2,7 +2,7 @@ import {LOGIN, LOGOUT, UPDATE_USER, UPDATE_DENTIST} from '../types';
 
 const initialState = {
     user : {},
-    admin: {},
+    // admin: {},
     token : ''
 };
 
