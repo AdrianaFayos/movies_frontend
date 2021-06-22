@@ -6,6 +6,7 @@ import Login from './container/Login/Login';
 import UserProfile from './container/UserProfile/UserProfile';
 import AdminHome from './container/AdminHome/AdminHome';
 import UserUpdate from './container/UserUpdate/UserUpdate';
+import Register from './container/Register/Register';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" exact component={UserProfile}/>
           <Route path="/adminhome" exact component={AdminHome}/>
           <Route path="/updateuser" exact component={UserUpdate}/>
+          <Route path="/register" exact component={Register}/>
         
         </Switch>
         
