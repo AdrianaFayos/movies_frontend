@@ -16,7 +16,9 @@ const UserHome = (props) => {
                 <div className="filmsCarrusel">
                     CARRUSEL DE PELICULAS NUEVAS
                 </div>
-                <p>SOY USER HOMEEEEE</p>
+                <div className="prueba">LAST FILMS</div>
+                <div className="prueba">TOP RATED</div>
+                <div className="prueba">THRILLER</div>
             </div> 
 
         </div>

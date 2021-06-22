@@ -2,6 +2,8 @@ import React from 'react';
 import './UserHeader.scss';
 import { connect } from "react-redux";
 import Link from '../Link/Link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faUser, faSearch, faUserLock, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const UserHeader = (props) => {
 
@@ -9,24 +11,22 @@ const UserHeader = (props) => {
         return(
     
             <div className="userHeaderContainer">
-                <Link path="/" destination="Home"/>
-                <Link path="/profile" destination="userImg"/>
-                <p>SEARCH</p>
-                <p>ORDERS</p>
-                <p>...</p>
+                <Link path="/" destination={<FontAwesomeIcon icon={faHome}/>}/>
+                <Link path="/profile" destination={<FontAwesomeIcon icon={faUser}/>}/>
+                <Link path="/search" destination={<FontAwesomeIcon icon={faSearch}/>}/>
+                <Link path="/orders" destination={<FontAwesomeIcon icon={faShoppingCart}/>}/>
             </div>
 
     )} else if (props.credentials?.user.isAdmin === true) {
 
         return(
 
-            <div className="userHeaderContainer">
-                <Link path="/" destination="Home"/>
-                <Link path="/profile" destination="userImg"/>
-                <p>SEARCH</p>
-                <p>ORDERS</p>
-                <p>...</p>
-                <Link path="/adminhome" destination="admin"/>
+            <div className="userHeaderContainerAdmin">
+                <Link path="/" destination={<FontAwesomeIcon icon={faHome}/>}/>
+                <Link path="/profile" destination={<FontAwesomeIcon icon={faUser}/>}/>
+                <Link path="/search" destination={<FontAwesomeIcon icon={faSearch}/>}/>
+                <Link path="/orders" destination={<FontAwesomeIcon icon={faShoppingCart}/>}/>
+                <Link path="/adminhome" destination={<FontAwesomeIcon icon={faUserLock}/>}/>
             </div>
         )
     }
