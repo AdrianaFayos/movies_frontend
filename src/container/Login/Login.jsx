@@ -87,19 +87,23 @@ const Login = (props) => {
     return(
 
         <div className="loginContainer vista">
-                    <div className="box1">
-                        
-                            <span className="text-nomb1">Email</span>
-                            <input className="input1" name="email" type="text"  onChange={updateCredentials} onBlur={()=>checkError("email")} required/>
-                            <div className="errorsText">{msgError.eEmail}</div>
+            <div className="box1">
+                
+                    <span className="text-nomb1">Email</span>
+                    <input className="input1" name="email" type="text"  onChange={updateCredentials} onBlur={()=>checkError("email")} required/>
+                    <div className="errorsText">{msgError.eEmail}</div>   
+                    <span className="text-nomb3">Password</span>
+                    <input className="input3" name="password" type="password" onChange={updateCredentials} onBlur={()=>checkError("password")}required/>
+                    <div className="errorsText">{msgError.ePassword}</div>
+              
+               <div className="sendButton" onClick={()=>logeame()}>Login</div>
+               <div>{msgError.eValidate}</div>
+               <br />
 
-                            <span className="text-nomb3">Password</span>
-                            <input className="input3" name="password" type="password" onChange={updateCredentials} onBlur={()=>checkError("password")}required/>
-                            <div className="errorsText">{msgError.ePassword}</div>
-                      
-                       <div className="sendButton" onClick={()=>logeame()}>Login</div>
-                       <div>{msgError.eValidate}</div>
-                    </div>
+               <div onClick={() => history.push('/register')}>REGISTER</div> 
+            </div>
+
+         
         </div>
     )
 

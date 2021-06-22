@@ -1,0 +1,22 @@
+.homeContainer {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(216, 250, 216);
+    // background-image: url();
+}
+
+.homeContent{
+    width: 100vw;
+    height: 85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text1 {
+    color: black;
+    font-size: 3em;
+}

@@ -36,10 +36,10 @@ const Header = (props) => {
                     logo
                 </div>
                 
-                <div className="headerUser">
-                    <Link path="/login" destination="LOGIN"/>
-                    <p>|</p>
-                    <Link path="/register" destination="REGISTER"/>
+                <div onClick={() => history.push('/login')} className="headerUser">
+                    LOGIN
+                    {/* <p>|</p>
+                    <div onClick={() => history.push('/register')}>REGISTER</div> */}
                 </div>
             </div>
         )

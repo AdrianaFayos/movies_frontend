@@ -1,7 +1,6 @@
 .headerContainer {
-    height:  6em;
+    height:  5em;
     width: 100vw;
-    background-color:#cfdcec;
     color: rgb(36, 34, 34);    
     
     display: flex;
@@ -11,20 +10,29 @@
 }
 
 .logoHeader {
-    margin-left: 3em;
+    margin-left: 4em;
     background-color: black;
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 .headerUser{ 
-    margin-right: 3em;
-    width: 20em;
+    margin-right: 4em;
+    width: 9em;
+    height: 2.5em;
+    background-color: rgb(97, 97, 97);
+    border-radius: 0.2em;
+    color: white;
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-direction: row;
     align-items: center;
+}
+
+.headerUser:hover{
+    cursor: pointer;
 }
 
 .linkLogout {

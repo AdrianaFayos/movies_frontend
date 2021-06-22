@@ -18,7 +18,9 @@ const Home = (props) => {
     
             <div className="homeContainer">
                 <Header />
-                SOY HOMEEEEE
+                <div className="homeContent">
+                    <p className="text1">All the movies you want, and much more.</p>
+                </div>
             </div>
         )
     
