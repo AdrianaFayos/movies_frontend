@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import './UserProfile.css';
+import './UserProfile.scss';
 import axios from "axios";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
+import UserHeader from "../../components/UserHeader/UserHeader";
 
 
 const UserProfile = (props) => {
@@ -25,6 +26,9 @@ const UserProfile = (props) => {
         return(
 
             <div className="userProfileContainer vista">
+              <div className="userHeaderHome">
+                <UserHeader/>
+            </div>  
                 <div className="userInfo">
                   <p>NAME : {props.credentials?.user.firstname} </p>
                   <p>LASTNAME : {props.credentials?.user.lastname} </p>
@@ -50,6 +54,9 @@ const UserProfile = (props) => {
         return(
 
             <div className="userProfileContainer vista">
+              <div className="userHeaderHome">
+                <UserHeader/>
+            </div>  
                 WELCOME {props.credentials?.user.firstname} !
                 <div className="userInfo">
                   <p>NAME : {props.credentials?.user.firstname} </p>
