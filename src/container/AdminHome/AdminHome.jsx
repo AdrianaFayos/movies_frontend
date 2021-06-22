@@ -1,5 +1,5 @@
 import React from 'react';
-import './AdminHome.css'
+import './AdminHome.scss'
 
 
 const AdminHome = () => {

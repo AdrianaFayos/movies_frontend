@@ -1,17 +1,31 @@
 import React from 'react';
-import './Home.css';
+import './Home.scss';
 import Header from '../../components/Header/Header';
+import UserHome from '../../components/UserHome/UserHome';
+import { connect } from "react-redux";
 
-const Home = () => {
+const Home = (props) => {
 
-    return(
 
-        <div className="homeContainer">
-            <Header />
-            SOY HOMEEEEE
-        </div>
-    )
+    if(props.credentials?.user.id){
+        return(
+
+            <UserHome />
+        )
+    } else {
+
+        return(
+    
+            <div className="homeContainer">
+                <Header />
+                SOY HOMEEEEE
+            </div>
+        )
+    
+    }    
 
 }
 
-export default Home;
+export default connect((state) => ({
+    credentials: state.credentials,
+  }))(Home);

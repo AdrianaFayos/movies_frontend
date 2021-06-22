@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/reacnpmt-fontawesome": "^0.1.14",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -14,6 +19,7 @@
     "react-scripts": "4.0.3",
     "redux": "4.1.0",
     "redux-localstorage-simple": "2.4.1",
+    "sass": "^1.35.1",
     "web-vitals": "1.1.2"
   },
   "scripts": {
