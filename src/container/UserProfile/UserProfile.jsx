@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import './UserProfile.scss';
 import axios from "axios";
@@ -22,13 +22,13 @@ const UserProfile = (props) => {
     };
 
     
-    if(props.credentials?.user.isAdmin === false) {
+    if(props.credentials?.user.id) {
         return(
 
-            <div className="userProfileContainer vista">
+            <div className="vista">
               <div className="userHeaderHome">
                 <UserHeader/>
-            </div>  
+              </div>  
                 <div className="userInfo">
                   <p>NAME : {props.credentials?.user.firstname} </p>
                   <p>LASTNAME : {props.credentials?.user.lastname} </p>
@@ -39,44 +39,15 @@ const UserProfile = (props) => {
                   <div className="buttonsProfile">
                     <div
                       className="buttonUpdate"
-                      onClick={() => history.push("/updateclient")}
+                      onClick={() => history.push("/updateuser")}
                     >
                       UPDATE
                     </div>
                     <div className="buttonLogoutC" onClick={() => logOut()}>
                       LOGOUT
                     </div>
-                  </div>
-                </div>  
-            </div>
-        )
-    } else if (props.credentials?.user.isAdmin === true) {
-        return(
-
-            <div className="userProfileContainer vista">
-              <div className="userHeaderHome">
-                <UserHeader/>
-            </div>  
-                WELCOME {props.credentials?.user.firstname} !
-                <div className="userInfo">
-                  <p>NAME : {props.credentials?.user.firstname} </p>
-                  <p>LASTNAME : {props.credentials?.user.lastname} </p>
-                  <p>EMAIL : {props.credentials?.user.email} </p>
-                  <p>PHONE : {props.credentials?.user.phone}</p>
-                  <p>BIRTHDAY : {props.credentials?.user.birthday}</p>
-                  <p>CITY : {props.credentials?.user.adress}</p>
-                  <div className="buttonsProfile">
-                    <div className="buttonUpdate" onClick={() => history.push("/updateclient")}>
-                      UPDATE
-                    </div>
-                    <div className="buttonLogoutC" onClick={() => logOut()}>
-                      LOGOUT
-                    </div>
-                  </div>
-                </div>  
-                <div className="buttonUpdate" onClick={() => history.push("/adminhome")}>
-                      ADMIN
                 </div>
+              </div>  
             </div>
         )
     } else {

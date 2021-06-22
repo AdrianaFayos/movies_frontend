@@ -26,7 +26,7 @@ const UserHeader = (props) => {
                 <p>SEARCH</p>
                 <p>ORDERS</p>
                 <p>...</p>
-                <p>ADMIN</p>
+                <Link path="/adminhome" destination="admin"/>
             </div>
         )
     }
