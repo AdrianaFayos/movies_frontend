@@ -1,0 +1,21 @@
+.userHeaderContainer{
+    height: 25em;
+    width: 5em;
+    transform: translate(-4.2em); 
+    background-color: coral;
+    border-radius: 0.5em;
+    position: absolute;
+    margin-top: 2em;
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.userHeaderContainer:hover {
+    transform: translate(0em); 
+    cursor: pointer;
+    transition: 0.2s;
+}
