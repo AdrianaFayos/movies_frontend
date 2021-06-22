@@ -1,0 +1,21 @@
+.userHeaderHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    width: 100vw;
+}
+
+.filmsCarrusel {
+    width: 100%;
+    height: 30em;
+    background-color: darkblue;
+}
+
+.userHeaderHome {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
