@@ -5,7 +5,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 
 const ClientInfo = (props) => {
@@ -53,6 +53,19 @@ const ClientInfo = (props) => {
         } 
     }
 
+    const deleteUser = async (user) => {
+
+        let token = props.credentials?.token;
+        let id = props.client?.id;
+
+        let body = {
+            userId : id
+        }
+
+        let res = await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+
+        history.push('allusers')
+    }
 
     if (props.credentials?.user.isAdmin === true) {
 
@@ -71,7 +84,10 @@ const ClientInfo = (props) => {
                         </div>
                         <div className="clientInfoContent">
                             <div className="UserCards">   
-                               <p>ID: {props.client?.id}</p> 
+                                <div className="userOptions">
+                                    <div className="button">{props.client?.id} </div>   
+                                    <div onClick={() => deleteUser()} className="button">{<FontAwesomeIcon icon={faTrashAlt}/>}</div>
+                                </div>
                                <p>NAME : {props.client?.firstname} </p>
                                <p>LASTNAME : {props.client?.lastname} </p>
                                <p>EMAIL : {props.client?.email} </p>
@@ -90,6 +106,7 @@ const ClientInfo = (props) => {
                                 {orders.map((order, index) => (
                                 <div key={index} className="OrderCardsUser">        
                                     <p>MOVIE : {order.movieTitle} </p>
+                                    <p>MOVIE ID : {order.movieId} </p>
                                     <p>RENTED : {order.rentedDate}</p>
                                     <p>RETURNED : {order.returnDate}</p>
                                 </div>

@@ -10,6 +10,8 @@ import Register from './container/Register/Register';
 import AdminAllUsers from './container/AdminAllUsers/AdminAllUsers';
 import AdminAllOrders from './container/AdminAllOrders/AdminAllOrders';
 import ClientInfo from './container/ClientInfo/ClientInfo';
+import UserOrders from './container/UserOrders/UserOrders';
+import SearchMovie from './container/SearchMovie/SearchMovie';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/allusers" exact component={AdminAllUsers}/>
           <Route path="/allorders" exact component={AdminAllOrders}/>
           <Route path="/clientinfo" exact component={ClientInfo}/>
+          <Route path="/orders" exact component={UserOrders}/>
+          <Route path="/search" exact component={SearchMovie}/>
 
         </Switch>
         

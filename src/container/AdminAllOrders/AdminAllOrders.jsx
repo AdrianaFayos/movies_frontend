@@ -49,8 +49,9 @@ const AdminAllOrders = (props) => {
                     <div className="adminInfo allUsersContent">
                         {orders.map((order, index) => (
                             <div key={index} className="OrderCards">        
-                                <p>USER : {order.userId} </p>
+                                <p>USER ID : {order.userId} </p>
                                 <p>MOVIE : {order.movieTitle} </p>
+                                <p>MOVIE ID : {order.movieId} </p>
                                 <p>RENTED : {order.rentedDate}</p>
                                 <p>RETURNED : {order.returnDate}</p>
                             </div>

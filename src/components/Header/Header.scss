@@ -10,29 +10,37 @@
 }
 
 .logoHeader {
-    margin-left: 4em;
-    background-color: black;
-    border-radius: 50%;
-    width: 2.5em;
-    height: 2.5em;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 
-.headerUser{ 
-    margin-right: 4em;
-    width: 9em;
-    height: 2.5em;
-    background-color: rgb(97, 97, 97);
-    border-radius: 0.2em;
-    color: white;
-
+.loginregister {
+    margin-right: 1em;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
 }
 
-.headerUser:hover{
-    cursor: pointer;
+.headerUser{ 
+    
+    width: 6em;
+    height: 1.5em;
+    margin: 0.5em;
+    padding: .5em;
+    border-radius: 0.2em;
+    color: white;
+    background-color: var(--pal1Col4);
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
 }
 
 .linkLogout {

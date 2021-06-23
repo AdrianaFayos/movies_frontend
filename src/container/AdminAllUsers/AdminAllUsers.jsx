@@ -5,7 +5,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
 import { CLIENT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
 
@@ -112,7 +112,10 @@ const AdminAllUsers = (props) => {
 
                         {users.map((user, index) => (
                             <div key={index} className="UserCards">   
-                                <div className="button" onClick={() => userInfo(user)}>ID : {user.id} </div>     
+                                <div className="userOptions">
+                                    <div className="button" onClick={() => userInfo(user)}>{user.id} </div>   
+                                    <div onClick={() => deleteUser(user)} className="button">{<FontAwesomeIcon icon={faTrashAlt}/>}</div>
+                                </div>
                                 <p>NAME : {user.firstname} </p>
                                 <p>LASTNAME : {user.lastname} </p>
                                 <p>EMAIL : {user.email} </p>
@@ -120,11 +123,8 @@ const AdminAllUsers = (props) => {
                                 <p>BIRTHDAY : {user.birthday}</p>
                                 <p>CITY : {user.adress}</p>
                                 <p>ROLE : {isAdminTest(user)}</p>
-
-                                <div className="userOptions">
-                                    <div onClick={() => deleteUser(user)} className="button">REMOVE</div>
-                                    <div onClick={() => isAdminUpdate(user)} className="button">UPDATE ROLE</div>
-                                </div>
+                                <div onClick={() => isAdminUpdate(user)} className="button">UPDATE ROLE</div>
+                            
                             </div>
                         ))}
                     </div>
