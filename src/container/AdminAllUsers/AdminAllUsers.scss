@@ -1,0 +1,39 @@
+.UserCards{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+
+    border-radius: 0.2em;
+    width: 17em;
+    height: 27em;
+    margin: 1em;
+    padding:1em;
+    background-color:var(--pal1Col4);
+}
+
+.allUsersContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.2em;
+}
+
+.userOptions {
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    margin: 0.5em;
+    padding: .5em;
+    border-radius: 0.2em;
+    background-color: var(--pal1Col1);
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
