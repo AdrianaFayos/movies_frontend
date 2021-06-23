@@ -38,12 +38,12 @@ const UserProfile = (props) => {
                   <p>CITY : {props.credentials?.user.adress}</p>
                   <div className="buttonsProfile">
                     <div
-                      className="buttonUpdate"
+                      className="button"
                       onClick={() => history.push("/updateuser")}
                     >
                       UPDATE
                     </div>
-                    <div className="buttonLogoutC" onClick={() => logOut()}>
+                    <div className="button" onClick={() => logOut()}>
                       LOGOUT
                     </div>
                 </div>

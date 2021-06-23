@@ -1,13 +1,16 @@
 .userInfo {
-    display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
+    display: flex;
 
-    padding: 2em;
-    height: 30em;
+    border-radius: 0.2em;
     width: 25em;
-    background-color: rgb(59, 57, 57);
+    height: 30em;
+    margin: 2em;
+    margin-top: 8em;
+    padding:1em;
+    background-color:var(--pal1Col4);
 }
 
 .buttonsProfile {
