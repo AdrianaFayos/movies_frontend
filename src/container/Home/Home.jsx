@@ -16,10 +16,15 @@ const Home = (props) => {
 
         return(
     
-            <div className="homeContainer">
-                <Header />
-                <div className="homeContent">
-                    <p className="text1">All the movies you want, and much more.</p>
+            <div>
+                <div className="homeContainer">
+
+                </div>
+                <div className="homeContainer1">
+                    <Header />
+                    <div className="homeContent">
+                        <p className="text1">All the movies you want, and much more.</p>
+                    </div>
                 </div>
             </div>
         )

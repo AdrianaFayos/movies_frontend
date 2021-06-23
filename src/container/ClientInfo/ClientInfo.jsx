@@ -5,8 +5,10 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTrashAlt, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const ClientInfo = (props) => {
 
@@ -23,6 +25,32 @@ const ClientInfo = (props) => {
     useEffect(() => {
 
     });
+
+    const submit = () => {
+        confirmAlert({
+            customUI: ({ onClose }) => {
+              return (
+                <div className="alert">
+                  <h1 className="alert__title">Are you sure?</h1>
+                  {/* <p className="alert__body">You want to delete this file?</p> */}
+                  <div className="alertButtons">
+                    <button onClick={onClose} className="alert__btn alert__btn--no">No</button>
+                    <button
+                      onClick={() => {
+                        deleteUser();
+                        onClose()
+                      }}
+                      className="alert__btn alert__btn--yes"
+                    >
+                      Yes, Delete it!
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          });
+          
+      }
 
     const findOrders = async () => {
 
@@ -53,7 +81,7 @@ const ClientInfo = (props) => {
         } 
     }
 
-    const deleteUser = async (user) => {
+    const deleteUser = async () => {
 
         let token = props.credentials?.token;
         let id = props.client?.id;
@@ -86,7 +114,7 @@ const ClientInfo = (props) => {
                             <div className="UserCards">   
                                 <div className="userOptions">
                                     <div className="button">{props.client?.id} </div>   
-                                    <div onClick={() => deleteUser()} className="button">{<FontAwesomeIcon icon={faTrashAlt}/>}</div>
+                                    <div onClick={() => submit()} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>
                                 </div>
                                <p>NAME : {props.client?.firstname} </p>
                                <p>LASTNAME : {props.client?.lastname} </p>

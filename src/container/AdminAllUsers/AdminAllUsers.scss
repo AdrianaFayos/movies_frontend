@@ -42,3 +42,37 @@
         cursor: pointer;
     }
 }
+
+.alert {
+    background-color: var(--pal1Col3);
+    width: 30em;
+    height: 15em;
+    margin-bottom: 3em;
+    border-radius: 0.2em;
+    opacity: 0.85;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.alertButtons {
+    width: 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.alert__btn, .alert__btn--yes, .alert__btn--no {
+    all: unset;
+    margin: 0.5em;
+    padding: .5em;
+    border-radius: 0.2em;
+    background-color: var(--pal1Col4);
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}

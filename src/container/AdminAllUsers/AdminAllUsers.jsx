@@ -5,9 +5,11 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers, faTrashAlt} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTrashAlt, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { CLIENT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const AdminAllUsers = (props) => {
 
@@ -41,6 +43,32 @@ const AdminAllUsers = (props) => {
             console.log(error);
         }
 
+    }
+
+    const submit = (user1) => {
+      confirmAlert({
+          customUI: ({ onClose }) => {
+            return (
+              <div className="alert">
+                <h1 className="alert__title">Are you sure?</h1>
+                {/* <p className="alert__body">You want to delete this file?</p> */}
+                <div className="alertButtons">
+                  <button onClick={onClose} className="alert__btn alert__btn--no">No</button>
+                  <button
+                    onClick={() => {
+                      deleteUser(user1);
+                      onClose();
+                    }}
+                    className="alert__btn alert__btn--yes"
+                  >
+                    Yes, Delete it!
+                  </button>
+                </div>
+              </div>
+            );
+          }
+        });
+        
     }
 
     const deleteUser = async (user) => {
@@ -114,7 +142,7 @@ const AdminAllUsers = (props) => {
                             <div key={index} className="UserCards">   
                                 <div className="userOptions">
                                     <div className="button" onClick={() => userInfo(user)}>{user.id} </div>   
-                                    <div onClick={() => deleteUser(user)} className="button">{<FontAwesomeIcon icon={faTrashAlt}/>}</div>
+                                    <div onClick={() => submit(user)} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>
                                 </div>
                                 <p>NAME : {user.firstname} </p>
                                 <p>LASTNAME : {user.lastname} </p>
@@ -124,8 +152,9 @@ const AdminAllUsers = (props) => {
                                 <p>CITY : {user.adress}</p>
                                 <p>ROLE : {isAdminTest(user)}</p>
                                 <div onClick={() => isAdminUpdate(user)} className="button">UPDATE ROLE</div>
-                            
+                            {/* <div className="button" onClick={() => submit()}>prueba</div> */}
                             </div>
+                            
                         ))}
                     </div>
                 </div>
