@@ -1,0 +1,11 @@
+.OrderCards{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+
+    width: 15em;
+    height: 17em;
+    margin: 2em;
+    background-color:var(--pal1Col4);
+}
