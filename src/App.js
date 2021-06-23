@@ -7,6 +7,9 @@ import UserProfile from './container/UserProfile/UserProfile';
 import AdminHome from './container/AdminHome/AdminHome';
 import UserUpdate from './container/UserUpdate/UserUpdate';
 import Register from './container/Register/Register';
+import AdminAllUsers from './container/AdminAllUsers/AdminAllUsers';
+import AdminAllOrders from './container/AdminAllOrders/AdminAllOrders';
+import ClientInfo from './container/ClientInfo/ClientInfo';
 
 function App() {
   return (
@@ -23,7 +26,10 @@ function App() {
           <Route path="/adminhome" exact component={AdminHome}/>
           <Route path="/updateuser" exact component={UserUpdate}/>
           <Route path="/register" exact component={Register}/>
-        
+          <Route path="/allusers" exact component={AdminAllUsers}/>
+          <Route path="/allorders" exact component={AdminAllOrders}/>
+          <Route path="/clientinfo" exact component={ClientInfo}/>
+
         </Switch>
         
         
