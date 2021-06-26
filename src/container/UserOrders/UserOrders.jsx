@@ -37,6 +37,9 @@ const UserOrders = (props) => {
 
     }
 
+    const baseImgUrl = "https://image.tmdb.org/t/p"
+    const size = "w200"
+
     if (props.credentials?.user.isAdmin === true) {
 
         return(
@@ -48,10 +51,7 @@ const UserOrders = (props) => {
                     
                         {orders.map((order, index) => (
                             <div key={index} className="OrderCards">        
-                                <p>MOVIE : {order.movieTitle} </p>
-                                <p>IMAGEN</p>
-                                <p>RENTED : {order.rentedDate}</p>
-                                <p>RETURNED : {order.returnDate}</p>
+                                <img src={`${baseImgUrl}/${size}${order.moviePoster}`} width="180" alt="poster"/>
                             </div>
                         ))}
                     
