@@ -1,9 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './UserHome.scss';
 import { connect } from "react-redux";
+import { MOVIE } from "../../redux/types";
 import UserHeader from '../UserHeader/UserHeader';
+import axios from 'axios';
+import { useHistory } from 'react-router';
 
 const UserHome = (props) => {
+
+
+    let history = useHistory()
+
+    const [ topRated, setTopRated ] = useState([]);
+    const [ upcoming, setUpcoming ] = useState([]);
+
+
+    useEffect(() =>{
+        getTopRated();
+        getUpcoming();
+    },[])
+
+
+    useEffect(() =>{
+       
+    })
+
+
+    const getTopRated = async () => {
+
+        try {
+
+            let res = await axios.get("http://localhost:3006/movies/toprated");
+
+            setTopRated(res.data.results)
+
+        } catch (error) {
+
+            console.log( { message: error.message} );
+        }
+    }
+
+    const getUpcoming = async () => {
+
+        try {
+
+            let res = await axios.get("http://localhost:3006/movies/upcoming");
+
+            setUpcoming(res.data.results)
+
+        } catch (error) {
+
+            console.log( { message: error.message} );
+        }
+    }
+
+    const getFilmInfo = (film) => {
+        props.dispatch({ type: MOVIE, payload: film });
+
+        history.push("/filminfo");
+    }
+
+    const baseImgUrl = "https://image.tmdb.org/t/p"
+    const size = "w200"
 
     return(
 
@@ -16,8 +74,32 @@ const UserHome = (props) => {
                 <div className="filmsCarrusel">
                     CARRUSEL DE PELICULAS NUEVAS
                 </div>
-                <div className="prueba">LAST FILMS</div>
-                <div className="prueba">TOP RATED</div>
+                <div className="prueba1">
+                    <p>UPCOMING</p>
+                    <div className="filmsContainer">
+                        {upcoming.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+                <div className="prueba1">
+                    <p>TOP RATED</p>
+                    <div className="filmsContainer">
+                        {topRated.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
                 <div className="prueba">THRILLER</div>
             </div> 
 

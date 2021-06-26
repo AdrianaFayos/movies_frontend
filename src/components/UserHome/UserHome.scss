@@ -27,3 +27,34 @@
     border: solid rgb(129, 75, 25);
     width: 100vw;
 }
+
+.prueba1 {
+    margin-top: 1em;
+    height: 21em;
+    width: 100vw;
+    overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filmsContainer {
+    // padding: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.film {
+    margin-right: 1em;
+    border-radius: 0.2em;
+    transition: 0.2s;
+
+    &:hover {
+        transform: scale(1.1);
+        transition: 0.2s;
+        cursor: pointer;
+    }
+}
