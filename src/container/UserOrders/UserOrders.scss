@@ -10,3 +10,19 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.OrderCardsImg{
+    position: relative;
+    border-radius: 0.2em;
+}
+
+
+
+.cross1 {
+    width: 11em;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
