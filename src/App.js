@@ -12,6 +12,7 @@ import AdminAllOrders from './container/AdminAllOrders/AdminAllOrders';
 import ClientInfo from './container/ClientInfo/ClientInfo';
 import UserOrders from './container/UserOrders/UserOrders';
 import SearchMovie from './container/SearchMovie/SearchMovie';
+import FilmInfo from './container/FilmInfo/FilmInfo';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/clientinfo" exact component={ClientInfo}/>
           <Route path="/orders" exact component={UserOrders}/>
           <Route path="/search" exact component={SearchMovie}/>
+          <Route path="/filminfo" exact component={FilmInfo}/>
 
         </Switch>
         
