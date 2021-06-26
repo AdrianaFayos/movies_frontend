@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './UserHome.scss';
 import { connect } from "react-redux";
 import { MOVIE } from "../../redux/types";
 import UserHeader from '../UserHeader/UserHeader';

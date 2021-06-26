@@ -1,6 +1,5 @@
 import React , {useEffect, useState} from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
-import './UserUpdate.scss';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import {useHistory} from 'react-router-dom';

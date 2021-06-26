@@ -1,5 +1,4 @@
 import React from 'react';
-import './UserHeader.scss';
 import { connect } from "react-redux";
 import Link from '../Link/Link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

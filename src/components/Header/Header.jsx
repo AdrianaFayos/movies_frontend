@@ -1,5 +1,4 @@
 import React from 'react';
-import './Header.scss';
 import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';

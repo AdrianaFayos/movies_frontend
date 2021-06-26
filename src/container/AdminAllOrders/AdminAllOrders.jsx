@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
-import './AdminAllOrders.scss';
 import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";

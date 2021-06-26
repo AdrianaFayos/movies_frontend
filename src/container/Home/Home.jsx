@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.scss';
 import Header from '../../components/Header/Header';
 import UserHome from '../../components/UserHome/UserHome';
 import { connect } from "react-redux";

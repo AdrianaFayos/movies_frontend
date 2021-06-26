@@ -1,0 +1,24 @@
+@import 'scss/variables.scss';
+@import './container/UserUpdate/UserUpdate.scss';
+@import './container/UserProfile/UserProfile.scss';
+@import './container/UserOrders/UserOrders.scss';
+@import './container/SearchMovie/SearchMovie.scss';
+@import './container/Login/Login.scss';
+@import './container/Home/Home.scss';
+@import './container/FilmInfo/FilmInfo.scss';
+@import './container/ClientInfo/ClientInfo.scss';
+@import './container/AdminHome/AdminHome.scss';
+@import './container//AdminAllUsers/AdminAllUsers.scss';
+@import './container/AdminAllOrders/AdminAllOrders.scss';
+@import './components/Footer/Footer.scss';
+@import './components/Header/Header.scss';
+@import './components/Link/Link.scss';
+@import './components/UserHeader/UserHeader.scss';
+@import './components/UserHome/UserHome.scss';
+
+
+
+.App {
+  text-align: center;
+}
+

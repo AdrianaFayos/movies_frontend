@@ -11,7 +11,7 @@
 .adminHeader {
     width: 20em;
     height: 3.7em;
-    background-color: var(--pal1Col3);
+    background-color: $pal1Col3;
     border-radius: 0.2em;
     margin: 3em;
 
@@ -34,14 +34,14 @@
 }
 
 .adminInfo{
-    background-color: var(--pal1Col3);
+    background-color: $pal1Col3;
     width: 80%;
     height: 100%;
     margin-bottom: 3em;
 }
 
 .adminInfoContent{
-    background-color: var(--pal1Col3);
+    background-color: $pal1Col3;
     width: 80%;
     height: 35em;
     margin-bottom: 3em;

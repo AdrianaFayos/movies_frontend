@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import './UserProfile.scss';
 import axios from "axios";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";

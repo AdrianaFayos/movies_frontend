@@ -1,6 +1,5 @@
 import React from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
-import './FilmInfo.scss';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTimes} from "@fortawesome/free-solid-svg-icons";

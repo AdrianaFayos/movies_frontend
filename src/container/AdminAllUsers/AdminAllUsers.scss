@@ -10,7 +10,7 @@
     margin: 1em;
     padding:1em;
     padding-bottom: 2em;
-    background-color:var(--pal1Col4);
+    background-color: $pal1Col4;
 }
 
 .allUsersContent {
@@ -35,7 +35,7 @@
     margin: 0.5em;
     padding: .5em;
     border-radius: 0.2em;
-    background-color: var(--pal1Col1);
+    background-color: $pal1Col1;
 
     &:hover {
         transform: scale(1.05);
@@ -44,7 +44,7 @@
 }
 
 .alert {
-    background-color: var(--pal1Col3);
+    background-color: $pal1Col3;
     width: 30em;
     height: 15em;
     margin-bottom: 3em;
@@ -69,7 +69,7 @@
     margin: 0.5em;
     padding: .5em;
     border-radius: 0.2em;
-    background-color: var(--pal1Col4);
+    background-color: $pal1Col4;
 
     &:hover {
         transform: scale(1.05);

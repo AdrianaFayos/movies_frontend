@@ -11,7 +11,7 @@
 }
 
 .clientInfoContent{
-    background-color: var(--pal1Col3);
+    background-color: $pal1Col3;
     width: 80%;
     height: 100%;
     padding-left: 3em;
@@ -33,5 +33,5 @@
     margin: 1em;
     padding: 1em;
     border-radius: 0.2em;
-    background-color:var(--pal1Col4);
+    background-color: $pal1Col4;
 }
