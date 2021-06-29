@@ -39,10 +39,12 @@ const FilmInfo = (props) => {
             //   }, 550);
 
             swal({
-                title: "Movie added successfully",
+                
+                text: "Movie added successfully",
                 icon: "success",
-                button: "Close",
-                timer: 2500
+                button: 'Close',
+                timer: 2500,
+                
             })
 
             setTimeout(() => {
@@ -52,11 +54,13 @@ const FilmInfo = (props) => {
         } catch (error) {
 
             swal({
-                title: "You already have this movie",
+                text: "You already have this movie",
                 icon: "error",
-                button: "Close",
-                timer: 2500
+                button: 'Close',
+                timer: 2500,
+                
             })
+            
 
         }
 

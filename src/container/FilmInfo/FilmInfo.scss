@@ -68,3 +68,43 @@
     text-align: left
 
 }
+
+.swal-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(white, 0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swal-button {
+    background-color: $pal1Col4 !important;
+    border: unset !important;
+    border-radius: 0.2em !important;
+    text-shadow: unset !important;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+.swal-modal {
+    background-color: $pal1Col3 ;
+    border-radius: .2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swal-icon{
+    background-color: unset;
+}
+
+.swal-text{
+    color: white;
+    font-size: large;
+}
