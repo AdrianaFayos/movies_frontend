@@ -3,10 +3,14 @@ import UserHeader from '../../components/UserHeader/UserHeader';
 import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
+import { MOVIE } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers, faTimes} from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from 'react-router-dom';
 
 const UserOrders = (props) => {
+
+    let history = useHistory()
 
     const [ orders, setOrders ] = useState([]);
 
@@ -50,13 +54,25 @@ const UserOrders = (props) => {
 
     }
 
+    const getFilmInfo = async (film) => {
+
+        let id = film.movieId
+
+        let res = await axios.get('http://localhost:3006/movies/searchid/' + id)
+
+        props.dispatch({ type: MOVIE, payload: res.data });
+
+        history.push("/filminfo");
+    }
+
+
     const baseImgUrl = "https://image.tmdb.org/t/p"
     const size = "w200"
 
     if (props.credentials?.user.isAdmin === true) {
 
         return(
-            <div className="vista">
+            <div className="userOrderContainer">
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 
@@ -67,7 +83,7 @@ const UserOrders = (props) => {
                                 <div className="cross1">
                                      <div onClick={() => deleteOrder(order)} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>  
                                 </div>     
-                                <img className="OrderCardsImg" src={`${baseImgUrl}/${size}${order.moviePoster}`} width="180" alt="poster"/>
+                                <img className="OrderCardsImg" src={`${baseImgUrl}/${size}${order.moviePoster}`} width="180"  onClick={() => getFilmInfo(order)} alt="poster"/>
                             </div>
                         ))}
                     
