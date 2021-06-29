@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const FilmInfo = (props) => {
 
@@ -32,13 +33,30 @@ const FilmInfo = (props) => {
             headers: { authorization: "Bearer " + token }
             });
 
+            // setTimeout(() => {
+            //     history.push("/");
+            //   }, 550);
+
+            swal({
+                title: "Movie added successfully",
+                icon: "success",
+                button: "Close",
+                timer: 2500
+            })
+
             setTimeout(() => {
                 history.push("/");
-              }, 550);
+              }, 750);
 
         } catch (error) {
 
-            console.log( { message: error.message} );
+            swal({
+                title: "You already have this movie",
+                icon: "error",
+                button: "Close",
+                timer: 2500
+            })
+
         }
 
     }
