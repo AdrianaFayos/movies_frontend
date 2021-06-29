@@ -73,8 +73,9 @@ const UserHome = (props) => {
                 <div className="filmsCarrusel">
                     CARRUSEL DE PELICULAS NUEVAS
                 </div>
+                <p className="typeMovie">UPCOMING</p>
                 <div className="prueba1">
-                    <p>UPCOMING</p>
+                    
                     <div className="filmsContainer">
                         {upcoming.map((film, index) => (
         
@@ -86,8 +87,9 @@ const UserHome = (props) => {
 
                     </div>
                 </div>
+                <p className="typeMovie">TOP RATED</p>
                 <div className="prueba1">
-                    <p>TOP RATED</p>
+                    
                     <div className="filmsContainer">
                         {topRated.map((film, index) => (
         
