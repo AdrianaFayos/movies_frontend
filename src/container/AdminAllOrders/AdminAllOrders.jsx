@@ -5,7 +5,7 @@ import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
-// import Link from '../../components/Link/Link';
+import Tooltip from "react-simple-tooltip";
 
 const AdminAllOrders = (props) => {
 
@@ -42,8 +42,12 @@ const AdminAllOrders = (props) => {
                 </div> 
                 <div className="adminHomeContent">
                     <div className="adminHeader">
+                    <Tooltip content="Users" placement="top" background="#8191A6" padding="10" radius="2" border="unset">
                         <Link path="/allusers" destination={<FontAwesomeIcon icon={faUsers}/>}/>
+                    </Tooltip>   
+                    <Tooltip content="Orders" placement="top" background="#8191A6" padding="10" radius="2" border="unset">
                         <div className="iconsAdmin">{<FontAwesomeIcon icon={faList}/>}</div>
+                    </Tooltip>     
                     </div>
                     <div className="adminInfo allUsersContent">
                         {orders.map((order, index) => (

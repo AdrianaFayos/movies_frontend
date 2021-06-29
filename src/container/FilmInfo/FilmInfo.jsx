@@ -6,6 +6,7 @@ import { faStar, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
+// import Router from 'next/router'
 
 const FilmInfo = (props) => {
 
@@ -70,7 +71,7 @@ const FilmInfo = (props) => {
                 </div> 
                 <div className="filmInfoContent">
                     <div className="closeButon">
-                        <div onClick={() => history.push('/')} className="button cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                        <div onClick={() => window.history.back()} className="button cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                     </div>
                     <div className="filmInformation">
                         <img className="imgFilm" src={`${baseImgUrl}/${size}${props.movie?.poster_path}`} width="300" alt="poster"/>
