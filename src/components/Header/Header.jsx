@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { LOGOUT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
 import Link from '../Link/Link'
-import logo from './../../img/logo.png'
+import logo from './../../img/logo1.png'
 
 const Header = (props) => {
     let history = useHistory();
@@ -17,7 +17,7 @@ const Header = (props) => {
     if (props.credentials?.user.id){
         return(
             <div className="headerContainer">
-                <img src={logo} alt="" />
+                <img src={logo} alt="logo" />
 
                 <div className="headerUser">
                     <Link path="/profile" destination={props.credentials?.user.firstname}/>
@@ -30,7 +30,7 @@ const Header = (props) => {
         return (
 
             <div className="headerContainer">
-                <img className="logoHeader" src={logo} alt="logo" width="170"/>
+                <img className="logoHeader" src={logo} alt="logo" width="150"/>
                 
                 <div className="loginregister">
                     <div onClick={() => history.push('/login')} className="headerUser">
