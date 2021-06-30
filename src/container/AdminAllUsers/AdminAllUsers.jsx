@@ -10,6 +10,7 @@ import { useHistory } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Tooltip from "react-simple-tooltip";
+import moment from 'moment'
 
 const AdminAllUsers = (props) => {
 
@@ -154,7 +155,7 @@ const AdminAllUsers = (props) => {
                                 <p>LASTNAME : {user.lastname} </p>
                                 <p>EMAIL : {user.email} </p>
                                 <p>PHONE : {user.phone}</p>
-                                <p>BIRTHDAY : {user.birthday}</p>
+                                <p>BIRTHDAY : {moment(user.birthday).format('DD/MM/YYYY')}</p>
                                 <p>CITY : {user.adress}</p>
                                 <p>ROLE : {isAdminTest(user)}</p>
                                 <div onClick={() => isAdminUpdate(user)} className="button">UPDATE ROLE</div>

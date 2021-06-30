@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "react-simple-tooltip";
+import moment from 'moment'
 
 const AdminAllOrders = (props) => {
 
@@ -55,8 +56,7 @@ const AdminAllOrders = (props) => {
                                 <p>USER ID : {order.userId} </p>
                                 <p>MOVIE : {order.movieTitle} </p>
                                 <p>MOVIE ID : {order.movieId} </p>
-                                <p>RENTED : {order.rentedDate}</p>
-                                <p>RETURNED : {order.returnDate}</p>
+                                <p>RENTED : {moment(order.createdAt).format('DD/MM/YYYY')}</p>
                             </div>
                         ))}
                     </div>
