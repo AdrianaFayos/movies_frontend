@@ -4,6 +4,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import UserHeader from "../../components/UserHeader/UserHeader";
+import moment from 'moment'
 
 
 const UserProfile = (props) => {
@@ -33,7 +34,7 @@ const UserProfile = (props) => {
                   <p>LASTNAME : {props.credentials?.user.lastname} </p>
                   <p>EMAIL : {props.credentials?.user.email} </p>
                   <p>PHONE : {props.credentials?.user.phone}</p>
-                  <p>BIRTHDAY : {props.credentials?.user.birthday}</p>
+                  <p>BIRTHDAY : {moment(props.credentials?.user.birthday).format('DD/MM/YYYY')}</p>
                   <p>CITY : {props.credentials?.user.adress}</p>
                   <div className="buttonsProfile">
                     <div
