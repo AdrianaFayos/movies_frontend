@@ -8,6 +8,7 @@ import { faList, faUsers, faTrashAlt, faTimes} from "@fortawesome/free-solid-svg
 import { useHistory } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import moment from 'moment';
 
 const ClientInfo = (props) => {
 
@@ -119,7 +120,7 @@ const ClientInfo = (props) => {
                                <p>LASTNAME : {props.client?.lastname} </p>
                                <p>EMAIL : {props.client?.email} </p>
                                <p>PHONE : {props.client?.phone}</p>
-                               <p>BIRTHDAY : {props.client?.birthday}</p>
+                               <p>BIRTHDAY : {moment(props.client?.birthday).format('DD/MM/YYYY')}</p>
                                <p>CITY : {props.client?.adress}</p>
                                <p>ROLE : {isAdminTest(props.client)}</p>
     
@@ -134,8 +135,7 @@ const ClientInfo = (props) => {
                                 <div key={index} className="OrderCardsUser">        
                                     <p>MOVIE : {order.movieTitle} </p>
                                     <p>MOVIE ID : {order.movieId} </p>
-                                    <p>RENTED : {order.rentedDate}</p>
-                                    <p>RETURNED : {order.returnDate}</p>
+                                    <p>RENTED : {moment(order.createdAt).format('DD/MM/YYYY')}</p>
                                 </div>
                                 ))}
     
