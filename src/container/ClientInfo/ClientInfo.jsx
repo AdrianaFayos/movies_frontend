@@ -113,7 +113,7 @@ const ClientInfo = (props) => {
                             <Link path="/allorders" destination={<FontAwesomeIcon icon={faList}/>}/>
                         </div>
                         <div className="clientInfoContent">
-                            <div className="UserCards">   
+                            <div className="UserCards topCard">   
                                 <div className="userOptions">
                                     <div className="button">{props.client?.id} </div>   
                                     <div onClick={() => submit()} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>

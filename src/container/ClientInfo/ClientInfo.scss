@@ -1,7 +1,6 @@
 .userOrders {
     width: 90%;
     height: 100%;
-    padding-top: 3em;
     padding-bottom: 3em;
 
     display: flex;
@@ -16,10 +15,11 @@
     height: 100%;
     padding-left: 3em;
     margin-bottom: 3em;
+    padding-top: 4em;
 
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .OrderCardsUser{

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faList, faSearch, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../components/Logo/Logo';
 const SearchMovie = (props) => {
 
@@ -30,9 +30,14 @@ const SearchMovie = (props) => {
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 
-                <div className="userOrdersContent">
-
-                    
+                <div className="searchContent">
+                    <div className="movieSearch">
+                        <input type="text" name="searchMovie" id="" className="searcher"/>
+                        <FontAwesomeIcon icon={faSearch}/>
+                    </div>
+                    <div className="moviesFound">
+                        
+                    </div>
                 </div>
             </div>
         )
