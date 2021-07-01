@@ -2,7 +2,8 @@
 <a name="top"></a>
 
 <h1 align="center">
-  <br>MOVIES FRONTEND
+  <!-- <br> <img src="src/img/logo2.png" width="40"> POP'S TV -->
+  <br> 🍿 POP'S TV FRONTEND 🍿
 </h1>
 
 ---
@@ -53,7 +54,7 @@ On the other side, you will need to clone the backend from [THIS REPOSITORY](htt
 
 <img src="src/img/logos/javascript.png" width="50"> <img src="src/img/logos/html5.png" width="50"> <img src="src/img/logos/css3.png" width="50"> <img src="src/img/logos/react.png" width="50"> <img src="src/img/logos/redux.png" width="55"> <img src="src/img/logos/node.png" width="65"> <img src="src/img/logos/sass.png" width="50"> <img src="src/img/logos/trello.png" width="60">
 
-Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Nodemon, React-Router-Dom, Moment & Axios.
+Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Axios, Nodemon, React-Router-Dom, Moment, React-tooltip, Sweetalert, React-player & Fontawesome.
 
 <a name="developers"></a>
 
