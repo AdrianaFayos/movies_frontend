@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "react-simple-tooltip";
+import Logo from '../../components/Logo/Logo'
 
 const AdminHome = (props) => {
 
@@ -13,6 +14,7 @@ const AdminHome = (props) => {
 
         return(
             <div className="adminHomeContainer">
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 

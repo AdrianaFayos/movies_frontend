@@ -4,7 +4,8 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import UserHeader from "../../components/UserHeader/UserHeader";
-import moment from 'moment'
+import moment from 'moment';
+import Logo from '../../components/Logo/Logo';
 
 
 const UserProfile = (props) => {
@@ -26,6 +27,7 @@ const UserProfile = (props) => {
         return(
 
             <div className="vista">
+              <Logo />
               <div className="userHeaderHome">
                 <UserHeader/>
               </div>  

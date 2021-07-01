@@ -11,6 +11,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Tooltip from "react-simple-tooltip";
 import moment from 'moment'
+import Logo from '../../components/Logo/Logo'
 
 const AdminAllUsers = (props) => {
 
@@ -128,7 +129,9 @@ const AdminAllUsers = (props) => {
     if (props.credentials?.user.isAdmin === true) {
 
         return(
+
             <div className="adminHomeContainer">
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 

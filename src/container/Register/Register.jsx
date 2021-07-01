@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-
+import Logo from '../../components/Logo/Logo';
 
 const Register = (props) => {
 
@@ -134,6 +134,7 @@ const Register = (props) => {
 
     return (
         <div className="vistaRegisterClient vista">
+            <Logo />
             <div className="leftSide">
             {/* <pre>{JSON.stringify(datosUser, null,2)}</pre> */}
             </div>

@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "react-simple-tooltip";
-import moment from 'moment'
+import moment from 'moment';
+import Logo from '../../components/Logo/Logo'
 
 const AdminAllOrders = (props) => {
 
@@ -38,6 +39,8 @@ const AdminAllOrders = (props) => {
 
         return(
             <div className="adminHomeContainer">
+                
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 

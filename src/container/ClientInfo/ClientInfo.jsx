@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import moment from 'moment';
+import Logo from '../../components/Logo/Logo';
 
 const ClientInfo = (props) => {
 
@@ -102,6 +103,7 @@ const ClientInfo = (props) => {
 
             return(
                 <div className="adminHomeContainer">
+                    <Logo />
                     <div className="userHeaderHome">
                         <UserHeader/>
                     </div> 

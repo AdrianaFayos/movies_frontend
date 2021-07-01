@@ -4,6 +4,7 @@ import { MOVIE } from "../../redux/types";
 import UserHeader from '../UserHeader/UserHeader';
 import axios from 'axios';
 import { useHistory } from 'react-router';
+import Logo from '../Logo/Logo';
 
 const UserHome = (props) => {
 
@@ -65,6 +66,8 @@ const UserHome = (props) => {
     return(
 
         <div className="userHomeContainer">
+
+            <Logo />
             
             <div className="userHeaderHome">
                 <UserHeader/>

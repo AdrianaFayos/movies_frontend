@@ -7,6 +7,7 @@ import { MOVIE } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
+import Logo from '../../components/Logo/Logo';
 
 const UserOrders = (props) => {
 
@@ -73,6 +74,7 @@ const UserOrders = (props) => {
 
         return(
             <div className="userOrderContainer">
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 

@@ -1,0 +1,19 @@
+.logoAll{
+    width: 100%;
+    position: absolute;
+    position: fixed;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo2{
+    margin-top: .5em;
+    margin-right: 1em;
+    
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}

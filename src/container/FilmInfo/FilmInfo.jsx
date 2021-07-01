@@ -6,7 +6,8 @@ import { faStar, faTimes, faPlay} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+import Logo from '../../components/Logo/Logo';
 
 const FilmInfo = (props) => {
 
@@ -134,6 +135,7 @@ const FilmInfo = (props) => {
 
         return(
             <div className="filmHomeContainer">
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 
@@ -163,6 +165,7 @@ const FilmInfo = (props) => {
             return (
 
             <div className="filmHomeContainer">
+                <Logo />
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 

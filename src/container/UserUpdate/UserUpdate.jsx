@@ -4,6 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import { UPDATE_USER } from '../../redux/types';
+import Logo from '../../components/Logo/Logo';
 
 const UserUpdate = (props) => {
 
@@ -171,6 +172,7 @@ const UserUpdate = (props) => {
     return(
 
         <div className="updateContainer">
+            <Logo />
             <div className="userHeaderHome">
                 <UserHeader/>
             </div> 

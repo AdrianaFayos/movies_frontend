@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
+import Logo from '../../components/Logo/Logo';
 
 
 const Login = (props) => {
@@ -86,6 +87,7 @@ const Login = (props) => {
     return(
 
         <div className="loginContainer vista">
+            <Logo />
             <div className="box1">
                 
                     <span className="text-nomb1">Email</span>
