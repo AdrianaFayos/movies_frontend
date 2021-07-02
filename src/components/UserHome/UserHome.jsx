@@ -5,6 +5,7 @@ import UserHeader from '../UserHeader/UserHeader';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 import Logo from '../Logo/Logo';
+import Carrusel from '../Carrusel/Carrusel';
 
 const UserHome = (props) => {
 
@@ -14,10 +15,25 @@ const UserHome = (props) => {
     const [ topRated, setTopRated ] = useState([]);
     const [ upcoming, setUpcoming ] = useState([]);
 
+    const [ genre, setGenre ] = useState({
+        action : [],
+        adventure : [],
+        comedy : [],
+        family : [],
+        horror : [],
+        romance : [],
+        war : []
+    });
 
     useEffect(() =>{
         getTopRated();
         getUpcoming();
+        getByGenre('comedy');
+        getByGenre('action');
+        getByGenre('family');
+        getByGenre('horror');
+        getByGenre('romance');
+
     },[])
 
 
@@ -40,6 +56,7 @@ const UserHome = (props) => {
         }
     }
 
+
     const getUpcoming = async () => {
 
         try {
@@ -52,6 +69,22 @@ const UserHome = (props) => {
 
             console.log( { message: error.message} );
         }
+    }
+
+    const getByGenre = async (type) => {
+
+        try {
+
+           let res = await axios.get("http://localhost:3006/movies/genre/"+type);
+            
+           genre[type] = res.data.results;
+
+
+        } catch (error) {
+
+            console.log( { message: error.message} );
+        }
+
     }
 
     const getFilmInfo = (film) => {
@@ -73,9 +106,7 @@ const UserHome = (props) => {
                 <UserHeader/>
             </div>  
             <div className="userHomeContent">
-                <div className="filmsCarrusel">
-                    CARRUSEL DE PELICULAS NUEVAS
-                </div>
+                <Carrusel />
                 <p className="typeMovie">UPCOMING</p>
                 <div className="prueba1">
                     
@@ -104,7 +135,82 @@ const UserHome = (props) => {
 
                     </div>
                 </div>
-                <div className="prueba">THRILLER</div>
+                <p className="typeMovie">COMEDY</p>
+                <div className="prueba1">
+                    
+                    <div className="filmsContainer">
+                        {genre.comedy.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+            
+                <p className="typeMovie">ACTION</p>
+                <div className="prueba1">
+                    
+                    <div className="filmsContainer">
+                        {genre.action.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+
+                <p className="typeMovie">FAMILY</p>
+                <div className="prueba1">
+                    
+                    <div className="filmsContainer">
+                        {genre.family.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+
+
+                <p className="typeMovie">HORROR</p>
+                <div className="prueba1">
+                    
+                    <div className="filmsContainer">
+                        {genre.horror.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+
+                <p className="typeMovie">ROMANCE</p>
+                <div className="prueba1">
+                    
+                    <div className="filmsContainer">
+                        {genre.romance.map((film, index) => (
+        
+                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
+                            </div>
+                    
+                        ))}
+
+                    </div>
+                </div>
+                
             </div> 
 
         </div>
