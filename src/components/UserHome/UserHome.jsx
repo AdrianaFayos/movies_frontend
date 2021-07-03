@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
-import { MOVIE } from "../../redux/types";
 import UserHeader from '../UserHeader/UserHeader';
 import axios from 'axios';
-import { useHistory } from 'react-router';
 import Logo from '../Logo/Logo';
 import Carrusel from '../Carrusel/Carrusel';
+import CarruselFilms from '../CarruselFilms/CarruselFilms';
 
-const UserHome = (props) => {
-
-
-    let history = useHistory()
+const UserHome = () => {
 
     const [ topRated, setTopRated ] = useState([]);
     const [ upcoming, setUpcoming ] = useState([]);
@@ -76,6 +72,9 @@ const UserHome = (props) => {
         try {
 
            let res = await axios.get("http://localhost:3006/movies/genre/"+type);
+
+           // setGenre({genre[type]: res.data.results})
+           // In the previous way I only could save a value of genre object
             
            genre[type] = res.data.results;
 
@@ -86,15 +85,6 @@ const UserHome = (props) => {
         }
 
     }
-
-    const getFilmInfo = (film) => {
-        props.dispatch({ type: MOVIE, payload: film });
-
-        history.push("/filminfo");
-    }
-
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
 
     return(
 
@@ -107,109 +97,21 @@ const UserHome = (props) => {
             </div>  
             <div className="userHomeContent">
                 <Carrusel />
-                <p className="typeMovie">UPCOMING</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {upcoming.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
-                <p className="typeMovie">TOP RATED</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {topRated.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
-                <p className="typeMovie">COMEDY</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {genre.comedy.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
             
-                <p className="typeMovie">ACTION</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {genre.action.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
+                <CarruselFilms filmType="upcoming" filmType1={upcoming} />
 
-                    </div>
-                </div>
+                <CarruselFilms filmType="top rated" filmType1={topRated} />
+                
+                <CarruselFilms filmType="comedy" filmType1={genre.comedy} />
+                
+                <CarruselFilms filmType="action" filmType1={genre.action} />
+                
+                <CarruselFilms filmType="family" filmType1={genre.family} />
+                
+                <CarruselFilms filmType="horror" filmType1={genre.horror} />
 
-                <p className="typeMovie">FAMILY</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {genre.family.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
-
-
-                <p className="typeMovie">HORROR</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {genre.horror.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
-
-                <p className="typeMovie">ROMANCE</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {genre.romance.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
-
-                    </div>
-                </div>
+                <CarruselFilms filmType="romance" filmType1={genre.romance} />
+                
                 
             </div> 
 
