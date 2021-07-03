@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import { UPDATE_USER } from '../../redux/types';
 import Logo from '../../components/Logo/Logo';
+import Error from '../../components/Error/Error';
+
 
 const UserUpdate = (props) => {
 
@@ -229,7 +231,7 @@ const UserUpdate = (props) => {
 
         return(
             <div>
-                NOT ALLOWED
+                <Error />
             </div>
         )
     }

@@ -11,7 +11,8 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Tooltip from "react-simple-tooltip";
 import moment from 'moment'
-import Logo from '../../components/Logo/Logo'
+import Logo from '../../components/Logo/Logo';
+import Error from '../../components/Error/Error'
 
 const AdminAllUsers = (props) => {
 
@@ -173,7 +174,9 @@ const AdminAllUsers = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }

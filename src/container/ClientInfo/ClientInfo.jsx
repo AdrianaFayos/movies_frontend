@@ -10,6 +10,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import moment from 'moment';
 import Logo from '../../components/Logo/Logo';
+import Error from '../../components/Error/Error';
 
 const ClientInfo = (props) => {
 
@@ -167,7 +168,9 @@ const ClientInfo = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }

@@ -8,6 +8,8 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 import OrderPath from '../../components/OrderPath/OrderPath';
+import Error from '../../components/Error/Error';
+
 
 const UserOrders = (props) => {
 
@@ -95,7 +97,9 @@ const UserOrders = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }

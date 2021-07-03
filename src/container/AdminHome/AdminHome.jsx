@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "react-simple-tooltip";
 import Logo from '../../components/Logo/Logo'
+import Error from '../../components/Error/Error';
 
 const AdminHome = (props) => {
 
@@ -36,7 +37,9 @@ const AdminHome = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }

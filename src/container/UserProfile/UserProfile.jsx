@@ -5,6 +5,8 @@ import { LOGOUT } from "../../redux/types";
 import UserHeader from "../../components/UserHeader/UserHeader";
 import moment from 'moment';
 import Logo from '../../components/Logo/Logo';
+import Error from '../../components/Error/Error';
+
 
 
 const UserProfile = (props) => {
@@ -51,8 +53,8 @@ const UserProfile = (props) => {
     } else {
           
         return (
-          <div className="spinnerContainer">
-            Cargando ... ... ...
+          <div>
+            <Error />
           </div>
         );
 

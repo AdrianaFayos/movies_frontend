@@ -73,9 +73,9 @@ const Login = (props) => {
         props.dispatch({type:LOGIN, payload:res.data});
 
         // redirección
-        setTimeout(()=>{
-            history.push('/');
-        },750);
+        
+        history.push('/');
+        
 
         }catch{
             setMensajeError({...msgError, eValidate: 'Wrong email or password'});
@@ -87,9 +87,15 @@ const Login = (props) => {
 
         return(
 
-            <div>
-                ya estas logueado
+            <div className="errorContainer">
+            <Logo />
+            <div className="errorComponent">
+                <div className="error1">Oops ...</div>
+                <h1>It seems that you are already logged in.</h1>
+                <h2>Try to go to <a href="/">HOME PAGE</a>.</h2>
+
             </div>
+        </div>
         )
     } 
 

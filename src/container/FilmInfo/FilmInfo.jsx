@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 import ReactPlayer from 'react-player';
 import Logo from '../../components/Logo/Logo';
 import MoviePath from '../../components/MoviePath/MoviePath';
+import Error from '../../components/Error/Error';
 
 const FilmInfo = (props) => {
 
@@ -188,7 +189,9 @@ const FilmInfo = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }

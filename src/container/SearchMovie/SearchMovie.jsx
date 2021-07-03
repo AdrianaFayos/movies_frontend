@@ -8,6 +8,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../components/Logo/Logo';
 import { useHistory } from 'react-router-dom';
 import Movie from '../../components/Movie/Movie';
+import Error from '../../components/Error/Error';
+
 
 const SearchMovie = (props) => {
 
@@ -76,7 +78,9 @@ const SearchMovie = (props) => {
 
     } else {
         return (
-            <div>NO TIENES PERMISO</div>
+            <div>
+                <Error />
+            </div>
         )
     }
 }
