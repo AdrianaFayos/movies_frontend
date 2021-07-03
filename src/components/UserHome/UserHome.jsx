@@ -26,9 +26,9 @@ const UserHome = () => {
         getUpcoming();
         getByGenre('comedy');
         getByGenre('action');
-        getByGenre('family');
-        getByGenre('horror');
-        getByGenre('romance');
+        // getByGenre('family');
+        // getByGenre('horror');
+        // getByGenre('romance');
 
     },[])
 
@@ -85,6 +85,7 @@ const UserHome = () => {
         }
 
     }
+    
 
     return(
 
@@ -106,12 +107,12 @@ const UserHome = () => {
                 
                 <CarruselFilms filmType="action" filmType1={genre.action} />
                 
-                <CarruselFilms filmType="family" filmType1={genre.family} />
+                {/* <CarruselFilms filmType="family" filmType1={genre.family} /> */}
                 
-                <CarruselFilms filmType="horror" filmType1={genre.horror} />
+                {/* <CarruselFilms filmType="horror" filmType1={genre.horror} />
 
                 <CarruselFilms filmType="romance" filmType1={genre.romance} />
-                
+                 */}
                 
             </div> 
 
