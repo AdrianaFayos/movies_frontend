@@ -1,3 +1,4 @@
+@import url('http://fonts.cdnfonts.com/css/aurulent-sans');
 @import 'scss/variables.scss';
 @import './container/UserUpdate/UserUpdate.scss';
 @import './container/UserProfile/UserProfile.scss';
@@ -26,5 +27,6 @@
 
 .App {
   text-align: center;
+  font-family: 'Aurulent Sans', sans-serif;
 }
 

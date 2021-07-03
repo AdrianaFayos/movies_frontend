@@ -24,10 +24,29 @@
     align-items: center;
 }
 
+.playMovie{
+    width: 100em;
+    height: 50em;
+}
+
+.moviePlayer{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoPlay{
+    width: 100vw;
+    height: 100vh;
+}
+
 .resetButon{
    position: absolute;
    height: 3em;
-   width: 100%;
+   width: 99%;
    margin-top: .5em;
    display: flex;
    justify-content: flex-end;

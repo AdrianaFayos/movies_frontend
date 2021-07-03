@@ -45,7 +45,7 @@ const FilmInfo = (props) => {
 
             swal({
                 text: "Movie added successfully",
-                icon: "success",
+                // icon: "success",
                 button: 'Close',
                 timer: 2500,    
             })
@@ -119,8 +119,16 @@ const FilmInfo = (props) => {
             <div>
                 <div className="resetButon">
                     <div onClick={() => resetMovie()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
-                </div>    
-                <ReactPlayer url={video} width="100vw" height="100vh" controls="unset"/>
+                </div>  
+                
+                <div className="moviePlayer">
+
+                    <div className="playMovie">
+                      <ReactPlayer url={video} width="100%" height="100%" controls="unset"/>
+                    </div>
+                
+                </div>  
+            
             </div>
         )
 
