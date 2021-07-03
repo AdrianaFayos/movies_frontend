@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import UserHeader from "../../components/UserHeader/UserHeader";
@@ -12,11 +11,6 @@ const UserProfile = (props) => {
 
     let history = useHistory();
 
-    //hooks
-    const [userData, setUserData] = useState({
-        token: props.credentials?.token,
-        user: props.credentials?.user
-    });
 
     const logOut = () => {
         props.dispatch({ type: LOGOUT });

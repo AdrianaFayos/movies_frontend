@@ -52,7 +52,7 @@ const Register = (props) => {
                 adress: datosUser.adress,
             }
 
-            let res = await axios.post('http://localhost:3006/users/create', body);
+            await axios.post('http://localhost:3006/users/create', body);
 
             history.push('/login')
 
@@ -120,17 +120,17 @@ const Register = (props) => {
         }
     }
     
-     const errorStyle = (arg) =>{
+    //  const errorStyle = (arg) =>{
         
-        let errorDefault = "name";
-        let errorWarning = "red";
+    //     let errorDefault = "name";
+    //     let errorWarning = "red";
 
-        if (errors.eName!== ''){
-            return errorWarning;
-        }
+    //     if (errors.eName!== ''){
+    //         return errorWarning;
+    //     }
 
-        return errorDefault;
-     }
+    //     return errorDefault;
+    //  }
 
     return (
         <div className="vistaRegisterClient vista">

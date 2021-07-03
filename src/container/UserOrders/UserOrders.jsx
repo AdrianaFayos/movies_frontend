@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
 import axios from 'axios';
-import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { MOVIE } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
 
@@ -35,7 +34,7 @@ const UserOrders = (props) => {
             id : order.id
         }
 
-        let res = await axios.post('http://localhost:3006/orders/delete', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('http://localhost:3006/orders/delete', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 

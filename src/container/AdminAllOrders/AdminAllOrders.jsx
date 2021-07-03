@@ -45,7 +45,7 @@ const AdminAllOrders = (props) => {
             id : order.id
         }
 
-        let res = await axios.post('http://localhost:3006/orders/deletebyadmin', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('http://localhost:3006/orders/deletebyadmin', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 

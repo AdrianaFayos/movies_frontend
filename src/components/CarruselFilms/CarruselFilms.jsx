@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { MOVIE } from "../../redux/types";
 import { connect } from "react-redux";
 import { useHistory } from 'react-router';

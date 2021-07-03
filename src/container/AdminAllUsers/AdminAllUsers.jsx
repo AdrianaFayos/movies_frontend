@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers, faTrashAlt, faTimes} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { CLIENT } from '../../redux/types';
 import { useHistory } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
@@ -82,7 +82,7 @@ const AdminAllUsers = (props) => {
             userId : id
         }
 
-        let res = await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 
@@ -97,7 +97,7 @@ const AdminAllUsers = (props) => {
             userId : id
         }
 
-        let res = await axios.post('http://localhost:3006/users/isadminupdate', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('http://localhost:3006/users/isadminupdate', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 

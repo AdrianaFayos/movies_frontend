@@ -3,8 +3,7 @@ import { MOVIE } from "../../redux/types";
 import { connect } from "react-redux";
 import axios from 'axios';
 import { useHistory } from 'react-router';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const Carrusel = (props) => {
 
@@ -15,11 +14,11 @@ const Carrusel = (props) => {
         i: 0,
     });
 
-    useEffect(() =>{
+    useEffect (() =>{
     
         getPopular();
 
-    },[])
+    },[] )
 
 
     useEffect(() =>{
@@ -65,26 +64,24 @@ const Carrusel = (props) => {
          setPopular({ ...popular, i: i });
       };
     
-      const goLeft = () => {
-        let i = popular.i;
+      // const goLeft = () => {
+      //   let i = popular.i;
     
-        if (i > 0) {
-          i--;
-        } else {
-          i = popular.movies.length - 1;
-        }
-        setPopular({ ...popular, i: i });
-      };
+      //   if (i > 0) {
+      //     i--;
+      //   } else {
+      //     i = popular.movies.length - 1;
+      //   }
+      //   setPopular({ ...popular, i: i });
+      // };
     
-    
-      let i = popular.movies.length - 1;
+      // let i = popular.movies.length - 1;
 
       let data1 = popular.movies;
-      console.log(data1)
     
       let result = [];
       for (let j = 0; j < data1.length; j++) {
-        if (popular.i == j) {
+        if (popular.i === j) {
           result.push(
 
             <div>

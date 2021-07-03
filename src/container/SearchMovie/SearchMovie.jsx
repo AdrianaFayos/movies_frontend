@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
 import axios from 'axios';
-import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { MOVIE } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faSearch, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../components/Logo/Logo';
 import { useHistory } from 'react-router-dom';
 

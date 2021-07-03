@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers, faTrashAlt, faTimes} from "@fortawesome/free-solid-svg-icons";
+import { faList, faUsers, faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
@@ -62,9 +62,7 @@ const ClientInfo = (props) => {
         }
 
         let res = await axios.post('http://localhost:3006/orders/findbyid', body, {headers:{'authorization':'Bearer ' + token}}); 
-        
-        console.log(res.data)
-
+    
         setOrders(res.data)
 
     }
@@ -91,7 +89,7 @@ const ClientInfo = (props) => {
             userId : id
         }
 
-        let res = await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
 
         history.push('allusers')
     }

@@ -1,4 +1,4 @@
-import React , {useEffect, useState} from 'react';
+import React , {useState} from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
 import axios from 'axios';
 import { connect } from 'react-redux';

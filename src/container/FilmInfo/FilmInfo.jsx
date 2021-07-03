@@ -3,15 +3,12 @@ import UserHeader from '../../components/UserHeader/UserHeader';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faTimes, faPlay} from "@fortawesome/free-solid-svg-icons";
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
 import ReactPlayer from 'react-player';
 import Logo from '../../components/Logo/Logo';
 
 const FilmInfo = (props) => {
-
-    let history = useHistory();
 
     const [ video, setVideo] = useState('');
 
@@ -43,9 +40,7 @@ const FilmInfo = (props) => {
                 returnDate : "2021-05-20"
             }
 
-            console.log(token,user)
-    
-            let res = await axios.post("http://localhost:3006/orders/create", body, {
+            await axios.post("http://localhost:3006/orders/create", body, {
             headers: { authorization: "Bearer " + token }
             });
 
@@ -117,12 +112,12 @@ const FilmInfo = (props) => {
     }
 
 
-    if(video != '') {
+    if(video !== '') {
 
         return(
             <div>
                 <div className="resetButon">
-                    <div onClick={() => resetMovie()} className="button cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                    <div onClick={() => resetMovie()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                 </div>    
                 <ReactPlayer url={video} width="100vw" height="100vh" controls="unset"/>
             </div>
@@ -131,7 +126,7 @@ const FilmInfo = (props) => {
 
     } else if (props.credentials?.user) {
 
-        if ( movieOrder != '' ) {
+        if ( movieOrder !== '' ) {
 
         return(
             <div className="filmHomeContainer">
@@ -151,7 +146,6 @@ const FilmInfo = (props) => {
                             <p>{props.movie?.release_date}</p>
                             <p>{<FontAwesomeIcon icon={faStar}/>} {props.movie?.vote_average}</p>
                             <div className="rentButtons">
-                                {/* <div className="button" onClick={() => addToList()}>ADD TO LIST</div> */}
                                 <div className="button" onClick={() => playVideo()}>{<FontAwesomeIcon icon={faPlay}/>} PLAY </div>
                             </div>
                         </div>
@@ -182,7 +176,6 @@ const FilmInfo = (props) => {
                             <p>{<FontAwesomeIcon icon={faStar}/>} {props.movie?.vote_average}</p>
                             <div className="rentButtons">
                                 <div className="button" onClick={() => addToList()}>ADD TO LIST</div>
-                                {/* <div className="button" onClick={() => playVideo()}>{<FontAwesomeIcon icon={faPlay}/>}</div> */}
                             </div>
                         </div>
                     </div>

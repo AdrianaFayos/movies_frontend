@@ -1,6 +1,5 @@
 import React from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
-import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
