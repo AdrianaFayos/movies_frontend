@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../components/Logo/Logo';
 import { useHistory } from 'react-router-dom';
-
+import Movie from '../../components/Movie/Movie';
 
 const SearchMovie = (props) => {
 
@@ -48,10 +48,7 @@ const SearchMovie = (props) => {
         history.push("/filminfo");
     }
 
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
-
-    if (props.credentials?.user.isAdmin === true) {
+    if (props.credentials?.user) {
 
         return(
             <div className="searchContainer">
@@ -69,7 +66,7 @@ const SearchMovie = (props) => {
                         {movies.map((film, index) => (
         
                             <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film1" width="180" alt="poster"/>
+                               <Movie movie={film} />
                             </div>
                     
                         ))}
