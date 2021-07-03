@@ -4,7 +4,7 @@ import axios from 'axios';
 import Link from '../../components/Link/Link';
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faList, faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faList, faTimes, faUsers} from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "react-simple-tooltip";
 import moment from 'moment';
 import Logo from '../../components/Logo/Logo'
@@ -35,6 +35,22 @@ const AdminAllOrders = (props) => {
 
     }
 
+    const deleteOrder = async (order) => {
+
+        let token = props.credentials?.token;
+        let id = props.credentials?.user.id;
+
+        let body = {
+            userId : id,
+            id : order.id
+        }
+
+        let res = await axios.post('http://localhost:3006/orders/deletebyadmin', body, {headers:{'authorization':'Bearer ' + token}})
+
+        window.location.reload();
+
+    }
+
     if (props.credentials?.user.isAdmin === true) {
 
         return(
@@ -55,7 +71,9 @@ const AdminAllOrders = (props) => {
                     </div>
                     <div className="adminInfo allUsersContent">
                         {orders.map((order, index) => (
-                            <div key={index} className="OrderCards">        
+                            <div key={index} className="OrderCards">  
+                                   
+                                <div onClick={() => deleteOrder(order)} className="button1">{<FontAwesomeIcon icon={faTimes}/>}</div> 
                                 <p>USER ID : {order.userId} </p>
                                 <p>MOVIE : {order.movieTitle} </p>
                                 <p>MOVIE ID : {order.movieId} </p>
