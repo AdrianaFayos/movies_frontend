@@ -13,13 +13,15 @@ const Carrusel = (props) => {
         i: 0,
     });
 
+    
     useEffect (() =>{
     
         getPopular();
 
+    // eslint-disable-next-line 
     },[] )
 
-
+   
     useEffect(() =>{
 
       setTimeout(() => {

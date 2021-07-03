@@ -18,6 +18,8 @@ const FilmInfo = (props) => {
 
     useEffect(() => {
         checkOrder();
+
+    // eslint-disable-next-line     
     },[]);
 
     useEffect(() => {

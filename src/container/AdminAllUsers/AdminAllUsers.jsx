@@ -24,6 +24,7 @@ const AdminAllUsers = (props) => {
 
         findAllUsers();
 
+    // eslint-disable-next-line 
     },[]);
 
     useEffect(() => {

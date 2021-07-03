@@ -11,6 +11,7 @@ const UserHome = () => {
     const [ topRated, setTopRated ] = useState([]);
     const [ upcoming, setUpcoming ] = useState([]);
 
+    // eslint-disable-next-line 
     const [ genre, setGenre ] = useState({
         action : [],
         adventure : [],
@@ -30,6 +31,8 @@ const UserHome = () => {
         // getByGenre('horror');
         // getByGenre('romance');
 
+
+// eslint-disable-next-line 
     },[])
 
 

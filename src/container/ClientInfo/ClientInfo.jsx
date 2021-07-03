@@ -22,6 +22,7 @@ const ClientInfo = (props) => {
 
         findOrders();
 
+     // eslint-disable-next-line 
     },[]);
 
     useEffect(() => {

@@ -18,6 +18,7 @@ const AdminAllOrders = (props) => {
 
         findAllOrders();
 
+// eslint-disable-next-line 
     },[]);
 
     useEffect(() => {
