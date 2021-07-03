@@ -101,9 +101,7 @@ const FilmInfo = (props) => {
 
             let movie = JSON.stringify(res.data[0].movieId)
 
-            console.log(movie) 
             setMovieOrder(movie)
-            console.log(movieOrder)
 
         } catch {
             
@@ -120,7 +118,7 @@ const FilmInfo = (props) => {
                 <div className="resetButon">
                     <div onClick={() => resetMovie()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                 </div>  
-                
+
                 <div className="moviePlayer">
 
                     <div className="playMovie">
