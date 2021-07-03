@@ -2,6 +2,7 @@ import React from 'react';
 import { MOVIE } from "../../redux/types";
 import { connect } from "react-redux";
 import { useHistory } from 'react-router';
+import Movie from '../Movie/Movie';
 
 const CarruselFilms = (props) => {
 
@@ -16,26 +17,28 @@ const CarruselFilms = (props) => {
         history.push("/filminfo");
     }
 
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
+    
+
+
 
     return(
   
         <div>
-           <p className="typeMovie">{props.filmType.toUpperCase()}</p>
-                <div className="prueba1">
-                    
-                    <div className="filmsContainer">
-                        {movie.map((film, index) => (
-        
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
-                               <img src={`${baseImgUrl}/${size}${film.poster_path}`} className="film" width="180" alt="poster"/>
-                            </div>
-                    
-                        ))}
+            <div className="titleContent">
+                <p className="typeMovie">{props.filmType.toUpperCase()}</p>
+            </div>
+            <div className="prueba1">
+                
+                <div className="filmsContainer">
+                    {movie.map((film, index) => (
 
-                    </div>
+                        <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                           <Movie movie={film} />
+                        </div>
+                
+                    ))}
                 </div>
+            </div>
          </div>
     )
 

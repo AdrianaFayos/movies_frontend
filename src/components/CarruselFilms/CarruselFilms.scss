@@ -1,0 +1,30 @@
+.prueba1 {
+    height: 19em;
+    width: 100vw;
+    overflow: scroll;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.filmsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.titleContent {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.typeMovie {
+    margin-top: 1em;
+    margin-left: 1em;
+    font-size: large;
+}
