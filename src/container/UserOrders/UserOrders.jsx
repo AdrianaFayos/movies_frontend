@@ -69,7 +69,7 @@ const UserOrders = (props) => {
     }
 
 
-    if (props.credentials?.user) {
+    if (props.credentials?.user && orders.length > 0) {
 
         return(
             <div className="userOrderContainer">
@@ -94,6 +94,25 @@ const UserOrders = (props) => {
                 </div>
             </div>
         )
+
+    } else if (props.credentials?.user && orders.length <= 0){
+
+        return (
+            <div className="userOrderContainer">
+                <Logo />
+                <div className="userHeaderHome">
+                    <UserHeader/>
+                </div> 
+                
+                <div className="userOrdersEmpty">
+                    
+                    <h1>You can start adding movies to your list!</h1>
+                    <h2>Visit the <a href="/">HOME PAGE</a> or <a href="/search">SEARCH</a> for a title.</h2>
+                    
+                </div>
+            </div>
+        )    
+
 
     } else {
         return (
