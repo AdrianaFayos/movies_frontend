@@ -20,7 +20,7 @@ const UserHeader = (props) => {
                 <Tooltip content="Search" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
                     <Link path="/search" destination={<FontAwesomeIcon icon={faSearch}/>}/>
                 </Tooltip>  
-                <Tooltip content="Orders" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
+                <Tooltip content="List" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
                     <Link path="/orders" destination={<FontAwesomeIcon icon={faFilm}/>}/>
                 </Tooltip>   
             </div>
@@ -39,7 +39,7 @@ const UserHeader = (props) => {
                 <Tooltip content="Search" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
                     <Link path="/search" destination={<FontAwesomeIcon icon={faSearch}/>}/>
                 </Tooltip>  
-                <Tooltip content="Orders" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
+                <Tooltip content="List" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
                     <Link path="/orders" destination={<FontAwesomeIcon icon={faFilm}/>}/>
                 </Tooltip>    
                 <Tooltip content="Admin" placement="right" background="#8191A6" padding="10" radius="2" border="unset">
