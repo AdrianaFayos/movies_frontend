@@ -23,6 +23,10 @@ const Carrusel = (props) => {
 
 
     useEffect(() =>{
+
+      setTimeout(() => {
+        goRight()
+      }, 3500);
        
     })
 
@@ -85,19 +89,19 @@ const Carrusel = (props) => {
 
             <div>
                 <div className="pathMovie">
-                <img onClick={() => getFilmInfo(popular[j])} src={`${baseImgUrl}/${size}${popular.movies[j].backdrop_path}`} className="backMovie" width="100%" alt="poster"/>
+                <img src={`${baseImgUrl}/${size}${popular.movies[j].backdrop_path}`} className="backMovie" width="100%" alt="poster" />
                 </div>
                 <div className="contentCarrusel">
-                    <div className="buttonGo" onClick={() => goLeft()}>
+                    {/* <div className="buttonGo" onClick={() => goLeft()}>
                         <FontAwesomeIcon icon={faArrowLeft}/>
-                    </div>
+                    </div> */}
                     <div className="movieInfo">
                         <p className="filmTitle1">{popular.movies[j].title}</p>
-                        <div className="button" onClick={() => getFilmInfo(popular.movies[j])}>More info</div>
+                        <div className="button" onClick={() => getFilmInfo(popular.movies[j])}>More information</div>
                     </div>
-                    <div className="buttonGo" onClick={() => goRight()}>
+                    {/* <div className="buttonGo" onClick={() => goRight()}>
                         <FontAwesomeIcon icon={faArrowRight}/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
