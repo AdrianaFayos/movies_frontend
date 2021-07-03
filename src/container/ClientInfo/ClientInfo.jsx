@@ -115,8 +115,8 @@ const ClientInfo = (props) => {
                         <div className="clientInfoContent">
                             <div className="UserCards topCard">   
                                 <div className="userOptions">
-                                    <div className="button">{props.client?.id} </div>   
-                                    <div onClick={() => submit()} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                                    <div className="button1">{props.client?.id} </div>   
+                                    <div onClick={() => submit()} className="button1">{<FontAwesomeIcon icon={faTimes}/>}</div>
                                 </div>
                                <p>NAME : {props.client?.firstname} </p>
                                <p>LASTNAME : {props.client?.lastname} </p>

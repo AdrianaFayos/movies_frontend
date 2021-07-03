@@ -141,7 +141,7 @@ const FilmInfo = (props) => {
                 </div> 
                 <div className="filmInfoContent">
                     <div className="closeButon">
-                        <div onClick={() => window.history.back()} className="button cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                        <div onClick={() => window.history.back()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                     </div>
                     <div className="filmInformation">
                         <img className="imgFilm" src={`${baseImgUrl}/${size}${props.movie?.poster_path}`} width="300" alt="poster"/>
@@ -152,7 +152,7 @@ const FilmInfo = (props) => {
                             <p>{<FontAwesomeIcon icon={faStar}/>} {props.movie?.vote_average}</p>
                             <div className="rentButtons">
                                 {/* <div className="button" onClick={() => addToList()}>ADD TO LIST</div> */}
-                                <div className="button" onClick={() => playVideo()}>{<FontAwesomeIcon icon={faPlay}/>}</div>
+                                <div className="button" onClick={() => playVideo()}>{<FontAwesomeIcon icon={faPlay}/>} PLAY </div>
                             </div>
                         </div>
                     </div>
@@ -171,7 +171,7 @@ const FilmInfo = (props) => {
                 </div> 
                 <div className="filmInfoContent">
                     <div className="closeButon">
-                        <div onClick={() => window.history.back()} className="button cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                        <div onClick={() => window.history.back()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                     </div>
                     <div className="filmInformation">
                         <img className="imgFilm" src={`${baseImgUrl}/${size}${props.movie?.poster_path}`} width="300" alt="poster"/>
