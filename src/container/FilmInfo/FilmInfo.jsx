@@ -7,6 +7,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import ReactPlayer from 'react-player';
 import Logo from '../../components/Logo/Logo';
+import MoviePath from '../../components/MoviePath/MoviePath';
 
 const FilmInfo = (props) => {
 
@@ -20,9 +21,6 @@ const FilmInfo = (props) => {
 
     useEffect(() => {
     });
-
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
 
     const addToList = async () => {
 
@@ -111,6 +109,8 @@ const FilmInfo = (props) => {
         }
     }
 
+    let path = props.movie?.poster_path ;
+    let title = props.movie?.title ;
 
     if(video !== '') {
 
@@ -139,9 +139,9 @@ const FilmInfo = (props) => {
                         <div onClick={() => window.history.back()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                     </div>
                     <div className="filmInformation">
-                        <img className="imgFilm" src={`${baseImgUrl}/${size}${props.movie?.poster_path}`} width="300" alt="poster"/>
+                        <MoviePath path={path} title={title} />
                         <div className="infoFilm">
-                            <p className="filmTitle">{props.movie?.title}</p>
+                            <p className="filmTitle">{title}</p>
                             <p className="filmOverview">{props.movie?.overview}</p>
                             <p>{props.movie?.release_date}</p>
                             <p>{<FontAwesomeIcon icon={faStar}/>} {props.movie?.vote_average}</p>
@@ -168,9 +168,9 @@ const FilmInfo = (props) => {
                         <div onClick={() => window.history.back()} className="button1 cross">{<FontAwesomeIcon icon={faTimes}/>}</div>
                     </div>
                     <div className="filmInformation">
-                        <img className="imgFilm" src={`${baseImgUrl}/${size}${props.movie?.poster_path}`} width="300" alt="poster"/>
+                        <MoviePath path={path} title={title} />
                         <div className="infoFilm">
-                            <p className="filmTitle">{props.movie?.title}</p>
+                            <p className="filmTitle">{title}</p>
                             <p className="filmOverview">{props.movie?.overview}</p>
                             <p>{props.movie?.release_date}</p>
                             <p>{<FontAwesomeIcon icon={faStar}/>} {props.movie?.vote_average}</p>
