@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
+import OrderPath from '../../components/OrderPath/OrderPath';
 
 const UserOrders = (props) => {
 
@@ -66,10 +67,7 @@ const UserOrders = (props) => {
     }
 
 
-    const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
-
-    if (props.credentials?.user.isAdmin === true) {
+    if (props.credentials?.user) {
 
         return(
             <div className="userOrderContainer">
@@ -77,6 +75,7 @@ const UserOrders = (props) => {
                 <div className="userHeaderHome">
                     <UserHeader/>
                 </div> 
+                
                 <div className="userOrdersContent">
                     
                         {orders.map((order, index) => (
@@ -84,7 +83,9 @@ const UserOrders = (props) => {
                                 <div className="cross1">
                                      <div onClick={() => deleteOrder(order)} className="button1">{<FontAwesomeIcon icon={faTimes}/>}</div>  
                                 </div>     
-                                <img className="OrderCardsImg" src={`${baseImgUrl}/${size}${order.moviePoster}`} width="180"  onClick={() => getFilmInfo(order)} alt="poster"/>
+                                <div className="" onClick={() => getFilmInfo(order)}>
+                                     <OrderPath order={order} />
+                                </div>
                             </div>
                         ))}
                     
