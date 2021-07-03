@@ -1,12 +1,28 @@
-
+.registerContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 
 .registerBox {
-    width: 20em;
-    height: 40em;
-    background-color: rgb(61, 60, 60);
-
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+
+    border-radius: .2em;
+    margin-top: 5em;
+    height: 40em;
+    width: 60em;
+    background-color: $pal1Col3;
 }
+
+.registerBox1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+

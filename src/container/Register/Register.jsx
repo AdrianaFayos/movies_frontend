@@ -133,63 +133,57 @@ const Register = (props) => {
     //  }
 
     return (
-        <div className="vistaRegisterClient vista">
+        <div className="registerContainer">
             <Logo />
-            <div className="leftSide">
-            {/* <pre>{JSON.stringify(datosUser, null,2)}</pre> */}
-            </div>
             <div className="registerBox">
-                <div className="box">
-                    <div className="errorsText">{errors.eName}</div>
-                    <p>NAME : </p>
-                    <input className="input" name="firstname" type="text" onChange={updateFormulario} onBlur={()=>checkError("name")} />
-                </div>
-
-                <div className="box">
-                    <div className="errorsText">{errors.eLastname}</div>
-                    <p>LASTNAME : </p>
-                    <input className="input" name="lastname" type="text" onChange={updateFormulario} onBlur={()=>checkError("name")} />
+                <div className="registerBox1">
+                    <div className="box">
+                        <input className="input" placeholder="Firstname" name="firstname" type="text" onChange={updateFormulario} onBlur={()=>checkError("firstname")} />
+                        <div className="errorsText">{errors.eName}</div>
+                    </div>
+    
+                    <div className="box">
+                        <input className="input" placeholder="Lastname" name="lastname" type="text" onChange={updateFormulario} onBlur={()=>checkError("lastname")} />
+                        <div className="errorsText">{errors.eLastname}</div>
+                    </div>
                 </div>
                 
-                <div className="box">
-                    <div className="errorsText">{errors.eEmail}</div>
-                    <p>EMAIL</p>
-                    <input className="input1" name="email" type="text" onChange={updateFormulario} onBlur={()=>checkError("email")} />     
+                <div className="registerBox1">
+                    <div className="box">
+                        <input className="input" placeholder="Email" name="email" type="text" onChange={updateFormulario} onBlur={()=>checkError("email")} />     
+                        <div className="errorsText">{errors.eEmail}</div>
+                    </div>
+    
+                    <div className="box">
+                        <input placeholder="Phone" className="input" name="phone" type="text" onChange={updateFormulario} onBlur={()=>checkError("phone")}/>   
+                        <div className="errorsText">{errors.ePhone}</div>
+                    </div>
                 </div>
 
-                <div className="box">
-                    <div className="errorsText">{errors.ePassword}</div>
-                    <p>PASSWORD</p>
-                    <input className="input3" name="password" type="password" onChange={updateFormulario} onBlur={()=>checkError("password")}/>
+                <div className="registerBox1">
+                    <div className="box">
+                        <input placeholder="Password" className="input" name="password" type="password" onChange={updateFormulario} onBlur={()=>checkError("password")}/>
+                        <div className="errorsText">{errors.ePassword}</div>
+                    </div>
+    
+                    <div className="box">
+                        <input placeholder="Confirm Password" className="input" name="password2" type="password" onChange={updateFormulario} onBlur={()=>checkError("password2")}/>
+                        <div className="errorsText">{errors.ePassword2}</div>
+                    </div>
                 </div>
 
-                <div className="box">
-                    <div className="errorsText">{errors.ePassword2}</div>
-                    <p>REPEAT PASSWORD</p>
-                    <input className="input4" name="password2" type="password" onChange={updateFormulario} onBlur={()=>checkError("password2")}/>
-                    
+                <div className="registerBox1">
+                    <div className="box">
+                        <input placeholder="Birthday" className="input" name="birthday" type="date"/>   
+                    </div>
+    
+                    <div className="box">
+                        <input placeholder="City" className="input" name="adress" type="text" onChange={updateFormulario} onBlur={()=>checkError("city")}/>
+                    </div>  
                 </div>
-
-                <div className="box">
-                    <div className="errorsText">{errors.ePhone}</div>
-                    <p>PHONE</p>
-                    <input className="input2" name="phone" type="text" onChange={updateFormulario} onBlur={()=>checkError("phone")}/>   
-                </div>
-
-                <div className="box">
-                    <div className="errorsText">{errors.ePhone}</div>
-                    <p>BIRTHDAY</p>
-                    <input className="input2" name="birthday" type="date" onChange={updateFormulario} onBlur={()=>checkError("phone")}/>   
-                </div>
-
-                <div className="box">  
-                    {/* <div className="errorsText">{errors.eCity}</div> */}
-                    <p>CITY</p>
-                    <input className="input5" name="adress" type="text" onChange={updateFormulario} onBlur={()=>checkError("city")}/>
-                </div>  
             
 
-                <div className="registerButton" onClick={()=>applyRegister()}>Enviar</div>
+                <div className="button loginB" onClick={()=>applyRegister()}>Enviar</div>
             </div>
         </div>
     )
