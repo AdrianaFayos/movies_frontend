@@ -83,31 +83,50 @@ const Login = (props) => {
 
     }
 
+    if(props.credentials?.user.id){
 
-    return(
+        return(
 
-        <div className="loginContainer vista">
-            <Logo />
-            <div className="box1">
-                
-                    <span className="text-nomb1">Email</span>
-                    <input className="input1" name="email" type="text"  onChange={updateCredentials} onBlur={()=>checkError("email")} required/>
-                    <div className="errorsText">{msgError.eEmail}</div>   
-                    <span className="text-nomb3">Password</span>
-                    <input className="input3" name="password" type="password" onChange={updateCredentials} onBlur={()=>checkError("password")}required/>
-                    <div className="errorsText">{msgError.ePassword}</div>
-              
-               <div className="sendButton" onClick={()=>logeame()}>Login</div>
-               <div>{msgError.eValidate}</div>
-               <br />
+            <div>
+                ya estas logueado
+            </div>
+        )
+    } 
 
-               <div onClick={() => history.push('/register')}>REGISTER</div> 
+    else { 
+        
+        return(
+
+            <div className="loginContainer ">
+                <Logo />
+                <div className="box1">
+                    
+                    <h1>POP'S TV</h1>
+    
+                   <input className="input" name="email" type="text" placeholder="Email" onChange={updateCredentials} onBlur={()=>checkError("email")} required/>
+                   <div className="errorsText">{msgError.eEmail}</div>   
+                   <input className="input" name="password" type="password" placeholder="Password" onChange={updateCredentials} onBlur={()=>checkError("password")}required/>
+                   <div className="errorsText">{msgError.ePassword}</div>
+                  
+                   <div className="button loginB" onClick={()=>logeame()}>Login</div>
+                   <div className="errorsText">{msgError.eValidate}</div>
+                   
+                   <div className="registerL">
+                   <div>Don't have an account?</div>
+                   <div className="registerLogin" onClick={() => history.push('/register')}>Sign up</div> 
+                   </div>
+    
+                </div>
+    
+             
             </div>
 
-         
-        </div>
-    )
+        )
+
+    }
 
 }
 
-export default connect()(Login);
+export default connect((state) => ({
+    credentials: state.credentials,
+  }))(Login);

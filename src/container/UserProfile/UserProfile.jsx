@@ -14,6 +14,8 @@ const UserProfile = (props) => {
 
     const logOut = () => {
         props.dispatch({ type: LOGOUT });
+        
+        history.push("/");;
     };
 
     
@@ -47,17 +49,15 @@ const UserProfile = (props) => {
             </div>
         )
     } else {
-
-            setTimeout(() => {
-                history.push("/");
-              }, 1000);
           
-              return (
-                <div className="spinnerContainer">
-                  Cargando ... ... ...
-                </div>
-              );
-        }
+        return (
+          <div className="spinnerContainer">
+            Cargando ... ... ...
+          </div>
+        );
+
+
+    }
 
 }
 
