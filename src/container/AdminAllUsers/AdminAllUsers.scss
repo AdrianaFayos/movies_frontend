@@ -31,9 +31,21 @@
     justify-content: space-between;
 }
 
-.button {
+.button1 {
     margin: 0.5em;
     padding: .5em;
+    border-radius: 0.2em;
+    background-color: $pal1Col1;
+
+    &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.button {
+   
+    padding: 1em;
     border-radius: 0.2em;
     background-color: $pal1Col1;
 

@@ -151,8 +151,8 @@ const AdminAllUsers = (props) => {
                         {users.map((user, index) => (
                             <div key={index} className="UserCards">   
                                 <div className="userOptions">
-                                    <div className="button" onClick={() => userInfo(user)}>{user.id} </div>   
-                                    <div onClick={() => submit(user)} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>
+                                    <div className="button1" onClick={() => userInfo(user)}>{user.id} </div>   
+                                    <div onClick={() => submit(user)} className="button1">{<FontAwesomeIcon icon={faTimes}/>}</div>
                                 </div>
                                 <p>NAME : {user.firstname} </p>
                                 <p>LASTNAME : {user.lastname} </p>
