@@ -168,61 +168,71 @@ const UserUpdate = (props) => {
     }
 
     
+    if(props.credentials?.user.id) {
 
-    return(
-
-        <div className="updateContainer">
-            <Logo />
-            <div className="userHeaderHome">
-                <UserHeader/>
-            </div> 
-            <div className="updateUserContent">
-            <div className="updateContainer">
-
-                <h3 className="titleUpdate">Update your info</h3>
-                
-                <div className="errorsText">{errors.eName}</div>
-                <input type="text" name="firstname" placeholder={props.credentials?.user.firstname} onBlur={()=>checkError("firstname")} onChange={updateInfoUser}/>
-
-                <div className="errorsText">{errors.eLastname}</div>
-                <input type="text" name="lastname" placeholder={props.credentials?.user.lastname} onBlur={()=>checkError("lastname")} onChange={updateInfoUser}/>
-
-                <div className="errorsText">{errors.eEmail}</div>
-                <input type="email" name="email" placeholder={props.credentials?.user.email} onChange={updateInfoUser} onBlur={()=>checkError("email")} />
-
-                 <div className="errorsText">{errors.ePhone}</div>
-                <input type="text" name="phone" placeholder={props.credentials?.user.phone} onChange={updateInfoUser} onBlur={()=>checkError("phone")} />
-
-                
-                <div className="errorsText">{errors.eCity}</div>
-                <input type="text" name="city" placeholder={props.credentials?.user.adress} onChange={updateInfoUser} onBlur={()=>checkError("city")}/>
-
-
-                
-                <div className="updateButton" onClick={() => updateUser()}>UPDATE</div>
-                
+        return(
+    
+            <div className="updateView">
+                <Logo />
+                <div className="userHeaderHome">
+                    <UserHeader/>
+                </div> 
+                <div className="updateUserContainer">
+                    <div className="updateContainer">
+        
+                        <h3 className="titleUpdate">Update your info</h3>
+                        
+                        <div className="errorsText">{errors.eName}</div>
+                        <input className="input" type="text" name="firstname" placeholder={props.credentials?.user.firstname} onBlur={()=>checkError("firstname")} onChange={updateInfoUser}/>
+        
+                        <div className="errorsText">{errors.eLastname}</div>
+                        <input className="input" type="text" name="lastname" placeholder={props.credentials?.user.lastname} onBlur={()=>checkError("lastname")} onChange={updateInfoUser}/>
+        
+                        <div className="errorsText">{errors.eEmail}</div>
+                        <input className="input" type="email" name="email" placeholder={props.credentials?.user.email} onChange={updateInfoUser} onBlur={()=>checkError("email")} />
+        
+                         <div className="errorsText">{errors.ePhone}</div>
+                        <input className="input" type="text" name="phone" placeholder={props.credentials?.user.phone} onChange={updateInfoUser} onBlur={()=>checkError("phone")} />
+        
+                        
+                        <div className="errorsText">{errors.eCity}</div>
+                        <input className="input" type="text" name="city" placeholder={props.credentials?.user.adress} onChange={updateInfoUser} onBlur={()=>checkError("city")}/>
+        
+        
+                        
+                        <div className="button" onClick={() => updateUser()}>UPDATE</div>
+                        
+                    </div>
+                    
+                    <div className="updatePassword">
+        
+                        <h3 className="titleUpdate">Update your password</h3>
+        
+                        <input placeholder="Old Password" className="input" type="password" name="oldPassword" onChange={updatePasswordClient}/> 
+                            
+                        <div className="errorsText">{errors.ePassword}</div>
+                        <input placeholder="New Password"  className="input" type="password" name="newPassword" onChange={updatePasswordClient} onBlur={()=>checkError("password")}reqired/> 
+        
+                        <div className="errorsText">{errors.ePassword2}</div>
+                        <input placeholder="Confirm New Password" className="input" type="password" name="newPassword2" onChange={updatePasswordClient} onBlur={()=>checkError("password2")}/> 
+        
+                        <div className="errorsText">{errors.eValidate}</div>
+        
+                        <div className="button" onClick={() => updatePassword()}>UPDATE</div>
+                        
+                    </div>    
                 </div>
             </div>
-            <div className="updatePassword">
+        )
 
-                <h3 className="titleUpdate">Update your password</h3>
+    } else{
 
-                <input type="password" name="oldPassword" onChange={updatePasswordClient}/> 
-                    
-                <div className="errorsText">{errors.ePassword}</div>
-                <input type="password" name="newPassword" onChange={updatePasswordClient} onBlur={()=>checkError("password")}reqired/> 
-
-                <div className="errorsText">{errors.ePassword2}</div>
-                <input type="password" name="newPassword2" onChange={updatePasswordClient} onBlur={()=>checkError("password2")}/> 
-
-                <div className="errorsText">{errors.eValidate}</div>
-
-                <div className="updateButton" onClick={() => updatePassword()}>UPDATE</div>
-                
-            </div>    
-        </div>
-    )
-
+        return(
+            <div>
+                NOT ALLOWED
+            </div>
+        )
+    }
 }
 
 export default connect((state) => ({

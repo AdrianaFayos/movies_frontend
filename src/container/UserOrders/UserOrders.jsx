@@ -82,7 +82,7 @@ const UserOrders = (props) => {
                         {orders.map((order, index) => (
                             <div key={index} className="AllOrderCards">
                                 <div className="cross1">
-                                     <div onClick={() => deleteOrder(order)} className="button">{<FontAwesomeIcon icon={faTimes}/>}</div>  
+                                     <div onClick={() => deleteOrder(order)} className="button1">{<FontAwesomeIcon icon={faTimes}/>}</div>  
                                 </div>     
                                 <img className="OrderCardsImg" src={`${baseImgUrl}/${size}${order.moviePoster}`} width="180"  onClick={() => getFilmInfo(order)} alt="poster"/>
                             </div>
