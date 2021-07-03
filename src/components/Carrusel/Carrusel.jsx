@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
-
 const Carrusel = (props) => {
 
     let history = useHistory()
@@ -81,30 +80,62 @@ const Carrusel = (props) => {
     
       let result = [];
       for (let j = 0; j < data1.length; j++) {
+
         if (popular.i === j) {
-          result.push(
 
-            <div>
-                <div className="pathMovie">
-                <img src={`${baseImgUrl}/${size}${popular.movies[j].backdrop_path}`} className="backMovie" width="100%" alt="poster" />
-                </div>
-                <div className="contentCarrusel">
-                    {/* <div className="buttonGo" onClick={() => goLeft()}>
-                        <FontAwesomeIcon icon={faArrowLeft}/>
-                    </div> */}
-                    <div className="movieInfo">
-                        <p className="filmTitle1">{popular.movies[j].title}</p>
-                        <div className="button" onClick={() => getFilmInfo(popular.movies[j])}>More information</div>
-                    </div>
-                    {/* <div className="buttonGo" onClick={() => goRight()}>
-                        <FontAwesomeIcon icon={faArrowRight}/>
-                    </div> */}
-                </div>
-            </div>
+          if(popular.movies[j].backdrop_path === null) {
 
+            result.push(
+
+              <div>
+                  <div className="pathMovie">
+                    <div className="backdropCont"></div>
+                  </div>
+                  <div className="contentCarrusel">
+                      {/* <div className="buttonGo" onClick={() => goLeft()}>
+                          <FontAwesomeIcon icon={faArrowLeft}/>
+                      </div> */}
+                      <div className="movieInfo">
+                          <p className="filmTitle1">{popular.movies[j].title}</p>
+                          <div className="button info" onClick={() => getFilmInfo(popular.movies[j])}>More information</div>
+                      </div>
+                      {/* <div className="buttonGo" onClick={() => goRight()}>
+                          <FontAwesomeIcon icon={faArrowRight}/>
+                      </div> */}
+                  </div>
+              </div>
+  
+              
+              
+            );
+  
+          } else {
+
+            result.push(
+
+              <div>
+                  <div className="pathMovie">
+                  <img src={`${baseImgUrl}/${size}${popular.movies[j].backdrop_path }`} className="backMovie" alt="poster" />
+                  </div>
+                  <div className="contentCarrusel">
+                      {/* <div className="buttonGo" onClick={() => goLeft()}>
+                          <FontAwesomeIcon icon={faArrowLeft}/>
+                      </div> */}
+                      <div className="movieInfo">
+                          <p className="filmTitle1">{popular.movies[j].title}</p>
+                          <div className="button info" onClick={() => getFilmInfo(popular.movies[j])}>More information</div>
+                      </div>
+                      {/* <div className="buttonGo" onClick={() => goRight()}>
+                          <FontAwesomeIcon icon={faArrowRight}/>
+                      </div> */}
+                  </div>
+              </div>
+  
+              
+              
+            );
+          }
             
-            
-          );
         }
       }
 
