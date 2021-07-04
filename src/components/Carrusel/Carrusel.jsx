@@ -52,7 +52,7 @@ const Carrusel = (props) => {
     }
 
     const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200"
+    const size = "w1280";
 
     const goRight = () => {
         let i = popular.i;
