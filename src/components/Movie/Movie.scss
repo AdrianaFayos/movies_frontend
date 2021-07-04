@@ -18,13 +18,18 @@
     }
 }
 
+.moviePath2{
+    height: 16.5em;
+    width: 12em;
+    background-color: unset;
+}
+
 .film {
-    margin-right: 1em;
     border-radius: 0.2em;
     transition: 0.2s;
-
-    height: 20em;
-    width: 15em;
+    margin: 0.4em;
+    height: 17em;
+    width: 11em;
 
     &:hover {
         transform: scale(1.1);

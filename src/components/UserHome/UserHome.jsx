@@ -4,7 +4,7 @@ import UserHeader from '../UserHeader/UserHeader';
 import axios from 'axios';
 import Logo from '../Logo/Logo';
 import Carrusel from '../Carrusel/Carrusel';
-import CarruselFilms from '../CarruselFilms/CarruselFilms';
+//import CarruselFilms from '../CarruselFilms/CarruselFilms';
 import CarruselInfinit from '../CarruselInfinit/CarruselInfinit';
 
 const UserHome = () => {
@@ -103,7 +103,7 @@ const UserHome = () => {
             <div className="userHomeContent">
                 <Carrusel />
 
-                <CarruselFilms filmType="upcoming" filmType1={upcoming} />
+                {/* <CarruselFilms filmType="upcoming" filmType1={upcoming} /> */}
             
                 <CarruselInfinit  filmType="upcoming" type={upcoming}/>
 

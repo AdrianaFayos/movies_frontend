@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import UserHeader from '../../components/UserHeader/UserHeader';
 import axios from 'axios';
-import { connect } from "react-redux";
-import { MOVIE } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../../components/Logo/Logo';
-import { useHistory } from 'react-router-dom';
+import { connect } from "react-redux";
 import Movie from '../../components/Movie/Movie';
 import Error from '../../components/Error/Error';
 
 
 const SearchMovie = (props) => {
-
-    let history = useHistory()
 
     //hooks 
     const [ searchMovie, setSearchMovie] = useState({
@@ -40,15 +36,8 @@ const SearchMovie = (props) => {
         let res = await axios.get('http://localhost:3006/movies/search/'+movie);
 
         setMovies(res.data.results)
-
-
     } 
 
-    const getFilmInfo = (film) => {
-        props.dispatch({ type: MOVIE, payload: film });
-
-        history.push("/filminfo");
-    }
 
     if (props.credentials?.user) {
 
@@ -67,7 +56,7 @@ const SearchMovie = (props) => {
 
                         {movies.map((film, index) => (
         
-                            <div className="contentFilm" key={index} onClick={() => getFilmInfo(film)}>
+                            <div className="contentFilm" key={index}>
                                <Movie movie={film} />
                             </div>
                     

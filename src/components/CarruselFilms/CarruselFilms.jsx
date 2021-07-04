@@ -17,9 +17,6 @@ const CarruselFilms = (props) => {
         history.push("/filminfo");
     }
 
-    
-
-
 
     return(
   

@@ -1,5 +1,5 @@
 .filmsCarrusel {
-    width: 100%;
+    width: 100;
     height: 32em;
     overflow: hidden;
 
@@ -61,7 +61,7 @@
 }
 
 .info{
-    
+    background-color: $pal1Col1;
     transform: scale(1.2);
     transition: .2s;
     margin-left: 1em;

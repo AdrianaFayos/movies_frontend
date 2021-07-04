@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { MOVIE } from "../../redux/types";
+import React, { useState } from 'react';
 import { connect } from "react-redux";
-import axios from 'axios';
-import { useHistory } from 'react-router';
 import Movie from '../Movie/Movie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -18,8 +15,8 @@ const CarruselInfinit = (props) => {
     const goRight = () => {
         let i = popular.i;
     
-        if (i < props.type.length - 5) {
-          i = i+5;
+        if (i < props.type.length - 1) {
+          i = i+1;
         } else {
           i= 0;
         }
@@ -30,19 +27,32 @@ const CarruselInfinit = (props) => {
         let i = popular.i;
     
         if (i > 0) {
-          i = i-5;
+          i = i-1;
         } else {
-          i = props.type.length - 5;
+          i = props.type.length - 1;
         }
         setPopular({ ...popular, i: i });
       };
     
       // let i = popular.movies.length - 1;
 
+      let movies = [];
+      let x = popular.i + 7;
+
       let data1 = props.type;
-    
       let result = [];
-      for (let j = 0; j < data1.length; j++) {
+
+      for (let n = popular.i ; n < x ; n ++ ){
+
+        if (n < data1.length) {
+           movies.push( <Movie movie={props.type[n]}/> )
+        } else {
+          popular.i = 0
+        }
+
+      }
+
+      for (let j = 0 ; j < data1.length ; j++) {
 
         if (popular.i === j) {
 
@@ -54,18 +64,17 @@ const CarruselInfinit = (props) => {
                 </div>
                 
                 <div className="prueba2">
+
                      <div className="buttonGo" onClick={() => goLeft()}>
                           <FontAwesomeIcon icon={faArrowLeft}/>
                       </div>
-                     <Movie movie={props.type[j]} />
-                     <Movie movie={props.type[j+1]} />
-                     <Movie movie={props.type[j+2]} />
-                     <Movie movie={props.type[j+3]} />
-                     <Movie movie={props.type[j+4]} />
+
+                     {movies}
 
                      <div className="buttonGo" onClick={() => goRight()}>
-                          <FontAwesomeIcon icon={faArrowRight}/>
-                      </div>
+                        <FontAwesomeIcon icon={faArrowRight}/>
+                     </div>
+                     
                 </div>
              </div>
   
