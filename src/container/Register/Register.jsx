@@ -45,15 +45,17 @@ const Register = (props) => {
                 lastname: datosUser.lastname,
                 email : datosUser.email,
                 password : datosUser.password,
-                isAdmin : false,
                 phone: datosUser.phone,
                 birthday: datosUser.birthday,
                 adress: datosUser.adress,
             }
 
-            await axios.post('http://localhost:3006/users/create', body);
-
-            history.push('/login')
+            if(datosUser.password === datosUser.password2){
+                await axios.post('http://localhost:3006/users/create', body);
+                history.push('/login')
+            } else {
+                setErrors({...errors, eValidate: 'Register could not be completed., please try again.'});
+            }
 
         } catch {
              setErrors({...errors, eValidate: 'Register could not be completed., please try again.'});
@@ -91,7 +93,8 @@ const Register = (props) => {
             case 'password':
                 if (! /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(datosUser.password)){
                 // if (datosUser.password.length < 8){
-                    setErrors({...errors, ePassword: 'At least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters'});
+                    // setErrors({...errors, ePassword: 'At least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters'});
+                    setErrors({...errors, ePassword: 'Password must have at least 8 characters'});
                 }else{
                     setErrors({...errors, ePassword: ''});
                 }
@@ -178,7 +181,7 @@ const Register = (props) => {
 
                 <div className="registerBox1">
                     <div className="box">
-                        <input placeholder="Birthday: DD/MM/YYYY" className="input" name="birthday" type="text" onFocus="(this.type='date')" onChange={updateFormulario} />   
+                        <input placeholder="Birthday: DD/MM/YYYY" className="input" name="birthday" type="date" onChange={updateFormulario} />   
                     </div>
     
                     <div className="box">

@@ -96,6 +96,8 @@ const UserUpdate = (props) => {
                  newPassword : passwords.newPassword
              
              }
+
+             if(passwords.newPassword === passwords.newPassword2){
              let res = await axios.put('http://localhost:3006/users/password', body, {headers:{'authorization':'Bearer ' + token}});
 
              props.dispatch({type: UPDATE_USER, payload:res.data});
@@ -103,6 +105,9 @@ const UserUpdate = (props) => {
              setTimeout(()=>{
                  history.push('/profile');
              },750);
+            }else {
+                setErrors({...errors, eValidate2: 'Please confirm your password.'});
+            }
  
         } catch {
             setErrors({...errors, eValidate2: 'Wrong password, please try again'});
@@ -139,9 +144,10 @@ const UserUpdate = (props) => {
             break;
 
             case 'password':
-                if (! /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(passwords.newPassword)){
+                 if (! /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(passwords.newPassword)){
                 // if (updateInfo.password.length < 8){
-                    setErrors({...errors, ePassword: 'At least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters'});
+                    // setErrors({...errors, ePassword: 'At least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters'});
+                    setErrors({...errors, ePassword: 'Password must have at least 8 characters'});
                 }else{
                     setErrors({...errors, ePassword: ''});
                 }
@@ -186,22 +192,24 @@ const UserUpdate = (props) => {
         
                         <h3 className="titleUpdate">Update your info</h3>
                         
-                        <div className="errorsText">{errors.eName}</div>
                         <input className="input" type="text" name="firstname" placeholder={props.credentials?.user.firstname} onBlur={()=>checkError("firstname")} onChange={updateInfoUser}/>
-        
-                        <div className="errorsText">{errors.eLastname}</div>
-                        <input className="input" type="text" name="lastname" placeholder={props.credentials?.user.lastname} onBlur={()=>checkError("lastname")} onChange={updateInfoUser}/>
-        
-                        <div className="errorsText">{errors.eEmail}</div>
-                        <input className="input" type="email" name="email" placeholder={props.credentials?.user.email} onChange={updateInfoUser} onBlur={()=>checkError("email")} />
-        
-                         <div className="errorsText">{errors.ePhone}</div>
-                        <input className="input" type="text" name="phone" placeholder={props.credentials?.user.phone} onChange={updateInfoUser} onBlur={()=>checkError("phone")} />
-        
+                        <div className="errorsText">{errors.eName}</div>
+
                         
-                        <div className="errorsText">{errors.eCity}</div>
+                        <input className="input" type="text" name="lastname" placeholder={props.credentials?.user.lastname} onBlur={()=>checkError("lastname")} onChange={updateInfoUser}/>
+                        <div className="errorsText">{errors.eLastname}</div>
+
+                        <input className="input" type="email" name="email" placeholder={props.credentials?.user.email} onChange={updateInfoUser} onBlur={()=>checkError("email")} />
+                        <div className="errorsText">{errors.eEmail}</div>
+
+                        <input className="input" type="text" name="phone" placeholder={props.credentials?.user.phone} onChange={updateInfoUser} onBlur={()=>checkError("phone")} />
+                        <div className="errorsText">{errors.ePhone}</div>
+                        
+                        
                         <input className="input" type="text" name="city" placeholder={props.credentials?.user.adress} onChange={updateInfoUser} onBlur={()=>checkError("city")}/>
-        
+                        <div className="errorsText">{errors.eCity}</div>
+
+
                         <div className="errorsText">{errors.eValidate1}</div>
                         
                         <div className="button" onClick={() => updateUser()}>UPDATE</div>
@@ -213,13 +221,14 @@ const UserUpdate = (props) => {
                         <h3 className="titleUpdate">Update your password</h3>
         
                         <input placeholder="Old Password" className="input" type="password" name="oldPassword" onChange={updatePasswordClient}/> 
-                            
-                        <div className="errorsText">{errors.ePassword}</div>
+                        <div className="errorsText"></div>
+
                         <input placeholder="New Password"  className="input" type="password" name="newPassword" onChange={updatePasswordClient} onBlur={()=>checkError("password")}reqired/> 
-        
-                        <div className="errorsText">{errors.ePassword2}</div>
+                        <div className="errorsText">{errors.ePassword}</div>
+                        
                         <input placeholder="Confirm New Password" className="input" type="password" name="newPassword2" onChange={updatePasswordClient} onBlur={()=>checkError("password2")}/> 
-        
+                        <div className="errorsText">{errors.ePassword2}</div>
+
                         <div className="errorsText">{errors.eValidate2}</div>
         
                         <div className="button" onClick={() => updatePassword()}>UPDATE</div>
