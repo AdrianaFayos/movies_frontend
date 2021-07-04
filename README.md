@@ -39,7 +39,7 @@ Finally you would just need to prepare some popcorn and enjoy the movie!
 Starting date: June 21st 2021. <br>
 Due date: July 4th 2021.
 
-Although this project was individual, I used trello to to have a better organization.
+I used trello to to have a better organization.
 
 <img src="src/img/screenshots/trello.png" width="1000">
 
@@ -86,5 +86,7 @@ Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Axios, No
 [Adriana Fayos](https://github.com/AdrianaFayos)
 
 ---
+
+Thanks to all my classmates for the help and working as a great team.
 
 [🔝](#top)
