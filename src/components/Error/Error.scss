@@ -1,0 +1,27 @@
+.errorContainer {
+    width: 100vw;
+    display: flex;
+     justify-content: center;
+}
+
+.errorComponent{
+    width: 70em;
+    height: 40em;
+    background-color: $pal1Col3;
+    border-radius: 0.2em;
+    margin-top: 7em;
+    margin-bottom: 3em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.error1{
+    font-size: 7em;
+}
+
+a{
+    color: white;
+}

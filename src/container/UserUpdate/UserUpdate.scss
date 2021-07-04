@@ -1,0 +1,37 @@
+
+.updateUserContainer{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.updateContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    border-radius: .2em;
+
+    height: 37em;
+    width: 32em;
+    background-color: $pal1Col3;
+}
+
+.updatePassword {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    border-radius: .2em;
+
+    height: 27em;
+    width: 32em;
+    background-color: $pal1Col3;
+}

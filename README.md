@@ -1,70 +1,92 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a name="top"></a>
 
-## Available Scripts
+<h1 align="center">
+  <!-- <br> <img src="src/img/logo2.png" width="40"> POP'S TV -->
+  <img src="src/img/logo2.png" width="70">
+  <br>
+  POP'S TV 
+</h1>
 
-In the project directory, you can run:
+---
+
+- [About](#about)   
+
+- [Instructions](#instructions)
+
+- [Screenshots](#images)
+
+- [Tools](#tools)
+
+- [Author](#developers)
+
+---
+<a name="about"></a>
+## About :speech_balloon:
+
+Challenge from the Fullstack Developer Bootcamp at <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> where we have to create the frontend for a rental movies.
+
+In the following application, you would be able to log in once you have registered. 
+
+Then you could look at top rated, popular or upcoming movies and search films by title or genre.
+
+If you want to watch the movie, you need to add it to your list and immediately after you would be able to see the play button.
+
+Finally you would just need to prepare some popcorn and enjoy the movie! 
+
+<br>
+
+Starting date: June 21st 2021. <br>
+Due date: July 4th 2021.
+
+I used trello to to have a better organization.
+
+<img src="src/img/screenshots/trello.png" width="1000">
+
+
+<a name="instructions"></a> 
+## Instructions :clipboard: 
+
+The first step is to clone the repository and install the project dependencies.
+
+### `npm i`
+
+Next run the server.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+On the other side, you will need to clone the backend from [THIS REPOSITORY](https://github.com/AdrianaFayos/movies_backend) and follow its instructions to run it.
 
-### `npm test`
+<a name="images"></a>
+## Screenshots 📸
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Login
+<img src="src/img/screenshots/Login.gif" width="1000">
+Home
+<img src="src/img/screenshots/Home.gif" width="1000">
+Add one movie to your list and enjoy it
+<img src="src/img/screenshots/AddList.gif" width="1000">
+Search your favorite movie
+<img src="src/img/screenshots/search.gif" width="1000">
 
-### `npm run build`
+<a name="tools"></a>
+## Tools 🔧
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="src/img/logos/javascript.png" width="50"> <img src="src/img/logos/html5.png" width="50"> <img src="src/img/logos/css3.png" width="50"> <img src="src/img/logos/react.png" width="50"> <img src="src/img/logos/redux.png" width="55"> <img src="src/img/logos/node.png" width="65"> <img src="src/img/logos/sass.png" width="50"> <img src="src/img/logos/trello.png" width="60">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Axios, Nodemon, React-Router-Dom, Moment, React-tooltip, Sweetalert, React-player & Fontawesome.
 
-### `npm run eject`
+<a name="developers"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author ✍️
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Adriana Fayos](https://github.com/AdrianaFayos)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Thanks to all my classmates for the help and working as a great team.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[🔝](#top)

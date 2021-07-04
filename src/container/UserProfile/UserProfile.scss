@@ -1,0 +1,23 @@
+.userInfo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+
+    border-radius: 0.2em;
+    width: 25em;
+    height: 30em;
+    margin: 2em;
+    margin-top: 8em;
+    padding:1em;
+    background-color: $pal1Col3;
+}
+
+.buttonsProfile {
+    width: 15em;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    
+}

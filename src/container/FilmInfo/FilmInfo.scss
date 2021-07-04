@@ -1,0 +1,150 @@
+.filmHomeContainer {
+    width: 100vw;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.filmInfoContent {
+    position: relative;
+    background-color: $pal1Col3;
+    width: 80%;
+    height: 35em;
+    margin-top: 5em;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-radius: 0.2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.playMovie{
+    width: 100em;
+    height: 50em;
+}
+
+.moviePlayer{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoPlay{
+    width: 100vw;
+    height: 100vh;
+}
+
+.resetButon{
+   position: absolute;
+   height: 3em;
+   width: 99%;
+   margin-top: .5em;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+
+}
+
+.closeButon {
+   height: 6em;
+   width: 95%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+
+}
+
+.filmInformation{
+    height: 50em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+.imgFilm {
+    border-radius: 0.2em;
+    height: 28em;
+    width: 20em;
+
+    padding: 0.7;
+    background-color: $pal1Col1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.infoFilm{
+
+    height: 29em;
+    width: 43em;
+    padding-left: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.filmTitle{
+    font-size: x-large;
+}
+
+.filmOverview {
+
+    text-align: left
+
+}
+
+.swal-overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(white, 0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swal-button {
+    background-color: $pal1Col4 !important;
+    border: unset !important;
+    border-radius: 0.2em !important;
+    text-shadow: unset !important;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+
+.swal-modal {
+    background-color: $pal1Col3 ;
+    border-radius: .2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swal-icon{
+    background-color: unset;
+}
+
+.swal-text{
+    color: white;
+    font-size: large;
+}

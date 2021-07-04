@@ -1,0 +1,69 @@
+.filmsCarrusel {
+    width: 100%;
+    height: 32em;
+    overflow: hidden;
+
+    margin-bottom: 1em;
+
+}
+
+
+.contentCarrusel {
+    width: 100%;
+    height: 32em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.pathMovie {
+
+    width: 100%;
+    height: 32em;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+
+}
+
+
+.movieInfo {
+    height: 20em;
+    width: 75em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.filmTitle1{
+    font-size: 4em;
+}
+
+.backdropCont{
+    height: 100%;
+    width: 100%;
+    background-color: $pal1Col1 ;
+}
+
+.backMovie{
+    width: 100%;
+    height: 32em;
+
+}
+
+.info{
+    background-color: $pal1Col5;
+    transform: scale(1.2);
+    margin-left: 1em;
+
+    &:hover {
+        transform: scale(1.3);
+    }
+}

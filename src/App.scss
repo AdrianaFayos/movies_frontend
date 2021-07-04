@@ -1,0 +1,34 @@
+@import url('http://fonts.cdnfonts.com/css/aurulent-sans');
+@import 'scss/variables.scss';
+@import './container/UserUpdate/UserUpdate.scss';
+@import './container/UserProfile/UserProfile.scss';
+@import './container/UserOrders/UserOrders.scss';
+@import './container/SearchMovie/SearchMovie.scss';
+@import './container/Login/Login.scss';
+@import './container/Register/Register.scss';
+@import './container/Home/Home.scss';
+@import './container/FilmInfo/FilmInfo.scss';
+@import './container/ClientInfo/ClientInfo.scss';
+@import './container/AdminHome/AdminHome.scss';
+@import './container//AdminAllUsers/AdminAllUsers.scss';
+@import './container/AdminAllOrders/AdminAllOrders.scss';
+@import './components/Footer/Footer.scss';
+@import './components/Header/Header.scss';
+@import './components/Link/Link.scss';
+@import './components/UserHeader/UserHeader.scss';
+@import './components/UserHome/UserHome.scss';
+@import './components/Logo//Logo.scss';
+@import './components/Carrusel/Carrusel.scss';
+@import './components/CarruselFilms/CarruselFilms.scss';
+@import './components/Movie/Movie.scss';
+@import './components/OrderPath/OrderPath.scss';
+@import './components/Error/Error.scss';
+@import './components/CarruselInfinit/CarruselInfinit.scss';
+
+
+.App {
+  text-align: center;
+  font-family: 'Aurulent Sans', sans-serif;
+  overflow-x:hidden;
+}
+
