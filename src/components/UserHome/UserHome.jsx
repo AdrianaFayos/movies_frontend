@@ -5,6 +5,7 @@ import axios from 'axios';
 import Logo from '../Logo/Logo';
 import Carrusel from '../Carrusel/Carrusel';
 import CarruselFilms from '../CarruselFilms/CarruselFilms';
+import CarruselInfinit from '../CarruselInfinit/CarruselInfinit';
 
 const UserHome = () => {
 
@@ -101,14 +102,20 @@ const UserHome = () => {
             </div>  
             <div className="userHomeContent">
                 <Carrusel />
-            
-                <CarruselFilms filmType="upcoming" filmType1={upcoming} />
 
-                <CarruselFilms filmType="top rated" filmType1={topRated} />
+                <CarruselFilms filmType="upcoming" filmType1={upcoming} />
+            
+                <CarruselInfinit  filmType="upcoming" type={upcoming}/>
+
+                <CarruselInfinit  filmType="top rated" type={topRated}/>
+
+                <CarruselInfinit  filmType="action" type={genre.action}/>
+
+                <CarruselInfinit  filmType="comedy" type={genre.comedy}/>
                 
-                <CarruselFilms filmType="comedy" filmType1={genre.comedy} />
+                {/* <CarruselFilms filmType="comedy" filmType1={genre.comedy} />
                 
-                <CarruselFilms filmType="action" filmType1={genre.action} />
+                <CarruselFilms filmType="action" filmType1={genre.action} /> */}
                 
                 {/* <CarruselFilms filmType="family" filmType1={genre.family} /> */}
                 

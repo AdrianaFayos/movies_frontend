@@ -48,9 +48,10 @@ const Register = (props) => {
                 isAdmin : false,
                 phone: datosUser.phone,
                 birthday: datosUser.birthday,
-                subscription: false,
                 adress: datosUser.adress,
             }
+
+            console.log(body)
 
             await axios.post('http://localhost:3006/users/create', body);
 
@@ -174,7 +175,7 @@ const Register = (props) => {
 
                 <div className="registerBox1">
                     <div className="box">
-                        <input placeholder="Birthday" className="input" name="birthday" type="date"/>   
+                        <input placeholder="Birthday" className="input" name="birthday" type="date" onChange={updateFormulario} />   
                     </div>
     
                     <div className="box">

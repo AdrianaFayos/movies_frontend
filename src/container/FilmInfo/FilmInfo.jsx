@@ -37,8 +37,6 @@ const FilmInfo = (props) => {
                 movieId : props.movie?.id,
                 movieTitle: props.movie?.title,
                 moviePoster : props.movie?.poster_path,
-                rentedDate : "2021-04-20",
-                returnDate : "2021-05-20"
             }
 
             await axios.post("http://localhost:3006/orders/create", body, {
