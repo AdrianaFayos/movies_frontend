@@ -3,7 +3,9 @@
 
 <h1 align="center">
   <!-- <br> <img src="src/img/logo2.png" width="40"> POP'S TV -->
-  <br> 🍿 POP'S TV FRONTEND 🍿
+  <img src="src/img/logo2.png" width="70">
+  <br>
+  POP'S TV 
 </h1>
 
 ---
@@ -16,7 +18,7 @@
 
 - [Tools](#tools)
 
-- [Developers](#developers)
+- [Author](#developers)
 
 ---
 <a name="about"></a>
@@ -60,6 +62,14 @@ On the other side, you will need to clone the backend from [THIS REPOSITORY](htt
 <a name="images"></a>
 ## Screenshots 📸
 
+Login
+<img src="src/img/screenshots/Login.gif" width="1000">
+Home
+<img src="src/img/screenshots/Home.gif" width="1000">
+Add one movie to your list and enjoy it
+<img src="src/img/screenshots/AddList.gif" width="1000">
+Search your favorite movie
+<img src="src/img/screenshots/search.gif" width="1000">
 
 <a name="tools"></a>
 ## Tools 🔧
@@ -71,13 +81,10 @@ Installed dependencies: Redux, React-redux, Redux-localstorage-simple, Axios, No
 
 <a name="developers"></a>
 
-## Developers ✍️
+## Author ✍️
 
 [Adriana Fayos](https://github.com/AdrianaFayos)
 
-
 ---
-
-Thanks to all my classmates for the help and work as a great team. 🚀
 
 [🔝](#top)
