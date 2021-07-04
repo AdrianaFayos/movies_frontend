@@ -31,11 +31,14 @@ const SearchMovie = (props) => {
     }
 
     const searchMovies = async () => {
-        let movie = searchMovie.movieTitle;
+        
+        if (searchMovie.movieTitle[0]){
+            let movie = searchMovie.movieTitle;
 
-        let res = await axios.get('http://localhost:3006/movies/search/'+movie);
-
-        setMovies(res.data.results)
+            let res = await axios.get('http://localhost:3006/movies/search/'+movie);
+        
+            setMovies(res.data.results)
+        }
     } 
 
 

@@ -47,8 +47,12 @@ const FilmInfo = (props) => {
                 text: "Movie added successfully",
                 // icon: "success",
                 button: 'Close',
-                timer: 2500,    
+                timer: 4000,    
             })
+
+            // setTimeout(() => {
+            //     window.location.reload();
+            //   }, 750);
 
             setTimeout(() => {
                 window.location.reload();

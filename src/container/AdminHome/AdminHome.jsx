@@ -30,6 +30,7 @@ const AdminHome = (props) => {
                     </div>
                     <div className="adminInfoContent">
                         <p className="text1">Welcome {props.credentials?.user.firstname} !</p>
+                        <p>This is the administrator view, in the top menu you can select to see all users or all orders.</p>
                     </div>
                 </div>
             </div>
