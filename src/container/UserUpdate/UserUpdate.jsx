@@ -77,7 +77,7 @@ const UserUpdate = (props) => {
             },750);
 
         } catch {
-            setErrors({...errors, eValidate: 'Could not be completed., please try again'});
+            setErrors({...errors, eValidate1: 'Could not be completed., please try again'});
         }
  
     }
@@ -105,7 +105,7 @@ const UserUpdate = (props) => {
              },750);
  
         } catch {
-            setErrors({...errors, eValidate: 'Wrong password, please try again'});
+            setErrors({...errors, eValidate2: 'Wrong password, please try again'});
         }
  
          
@@ -180,7 +180,9 @@ const UserUpdate = (props) => {
                     <UserHeader/>
                 </div> 
                 <div className="updateUserContainer">
+                    
                     <div className="updateContainer">
+
         
                         <h3 className="titleUpdate">Update your info</h3>
                         
@@ -200,7 +202,7 @@ const UserUpdate = (props) => {
                         <div className="errorsText">{errors.eCity}</div>
                         <input className="input" type="text" name="city" placeholder={props.credentials?.user.adress} onChange={updateInfoUser} onBlur={()=>checkError("city")}/>
         
-        
+                        <div className="errorsText">{errors.eValidate1}</div>
                         
                         <div className="button" onClick={() => updateUser()}>UPDATE</div>
                         
@@ -218,7 +220,7 @@ const UserUpdate = (props) => {
                         <div className="errorsText">{errors.ePassword2}</div>
                         <input placeholder="Confirm New Password" className="input" type="password" name="newPassword2" onChange={updatePasswordClient} onBlur={()=>checkError("password2")}/> 
         
-                        <div className="errorsText">{errors.eValidate}</div>
+                        <div className="errorsText">{errors.eValidate2}</div>
         
                         <div className="button" onClick={() => updatePassword()}>UPDATE</div>
                         

@@ -56,7 +56,7 @@ const Register = (props) => {
             history.push('/login')
 
         } catch {
-        setErrors({...errors, eValidate: 'Could not be completed., please try again'});
+             setErrors({...errors, eValidate: 'Register could not be completed., please try again.'});
         }
 
     }
@@ -134,8 +134,13 @@ const Register = (props) => {
     return (
         <div className="registerContainer">
             <Logo />
-            <div className="registerBox">
+            <div className="registerBox"> 
+            
+            <h1>WELCOME TO POP'S TV</h1>
+
                 <div className="registerBox1">
+
+               
                     <div className="box">
                         <input className="input" placeholder="Firstname" name="firstname" type="text" onChange={updateFormulario} onBlur={()=>checkError("firstname")} />
                         <div className="errorsText">{errors.eName}</div>
@@ -173,7 +178,7 @@ const Register = (props) => {
 
                 <div className="registerBox1">
                     <div className="box">
-                        <input placeholder="Birthday" className="input" name="birthday" type="date" onChange={updateFormulario} />   
+                        <input placeholder="Birthday: DD/MM/YYYY" className="input" name="birthday" type="text" onFocus="(this.type='date')" onChange={updateFormulario} />   
                     </div>
     
                     <div className="box">
@@ -183,6 +188,7 @@ const Register = (props) => {
             
 
                 <div className="button loginB" onClick={()=>applyRegister()}>Enviar</div>
+                <div className="errorsText1">{errors.eValidate}</div>
             </div>
         </div>
     )

@@ -9,11 +9,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
+    padding-top: 2em;
+    padding-bottom: 1em;
     border-radius: .2em;
-    margin-top: 5em;
-    height: 40em;
+    margin-top: 3em;
+    height: 42em;
     width: 60em;
     background-color: $pal1Col3;
 }
@@ -26,3 +28,7 @@
     justify-content: space-evenly;
 }
 
+.errorsText1{
+    color: rgb(247, 141, 141);
+    width: 40em;
+}
