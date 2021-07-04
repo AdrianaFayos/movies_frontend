@@ -53,3 +53,7 @@
     color: rgb(247, 141, 141);
     width: 20em;
 }
+
+::placeholder {
+   position: -5em;
+}

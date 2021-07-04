@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
+import moment from 'moment';
 
 const Register = (props) => {
 
@@ -28,7 +29,8 @@ const Register = (props) => {
         ePassword: '',
         ePassword2: '',
         eCity: '',
-        eValidate:''
+        eValidate:'',
+        eBirthday:''
     });
 
     // Handler
@@ -117,6 +119,17 @@ const Register = (props) => {
                 }
             break;
 
+            case 'birthday':
+
+                let years = moment().diff(moment(datosUser.birthday).format('MM/DD/YYYY'), 'years');
+                
+                if (years < 19 || years > 100){
+                    setErrors({...errors, eBirthday: 'You must be at least 18 years old to register.'});
+                }else {
+                    setErrors({...errors, eBirthday: ''});
+                }
+            break    
+
             default:
                 break;
         }
@@ -181,7 +194,9 @@ const Register = (props) => {
 
                 <div className="registerBox1">
                     <div className="box">
-                        <input placeholder="Birthday: DD/MM/YYYY" className="input" name="birthday" type="date" onChange={updateFormulario} />   
+                        <label className="label">Birthday:</label>
+                        <input className="input" name="birthday" type="date" onChange={updateFormulario} onBlur={()=>checkError("birthday")}/>   
+                        <div className="errorsText">{errors.eBirthday}</div>
                     </div>
     
                     <div className="box">
