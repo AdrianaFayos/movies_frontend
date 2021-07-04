@@ -51,8 +51,6 @@ const Register = (props) => {
                 adress: datosUser.adress,
             }
 
-            console.log(body)
-
             await axios.post('http://localhost:3006/users/create', body);
 
             history.push('/login')

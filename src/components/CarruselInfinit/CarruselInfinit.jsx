@@ -29,7 +29,7 @@ const CarruselInfinit = (props) => {
         if (i > 0) {
           i = i-1;
         } else {
-          i = props.type.length - 1;
+          i = ( props.type.length - 7 );
         }
         setPopular({ ...popular, i: i });
       };
