@@ -24,10 +24,11 @@ const UserHome = () => {
     });
 
     useEffect(() =>{
-        getTopRated();
-        getUpcoming();
         getByGenre('comedy');
         getByGenre('action');
+        getTopRated();
+        getUpcoming();
+        
         // getByGenre('family');
         // getByGenre('horror');
         // getByGenre('romance');

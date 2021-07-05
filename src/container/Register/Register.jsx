@@ -183,7 +183,7 @@ const Register = (props) => {
                 <div className="registerBox1">
                     <div className="box">
                         <input placeholder="Password" className="input" name="password" type="password" onChange={updateFormulario} onBlur={()=>checkError("password")}/>
-                        <div className="errorsText">{errors.ePassword}</div>
+                        {/* <div className="errorsText">{errors.ePassword}</div> */}
                     </div>
     
                     <div className="box">
