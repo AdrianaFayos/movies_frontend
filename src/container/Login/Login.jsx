@@ -67,7 +67,7 @@ const Login = (props) => {
         }
         // Envío por axios
 
-        let res = await axios.post('http://localhost:3006/login', body);
+        let res = await axios.post('https://afp-popstv-b.herokuapp.com//login', body);
 
 
         props.dispatch({type:LOGIN, payload:res.data});

@@ -53,7 +53,7 @@ const Register = (props) => {
             }
 
             if(datosUser.password === datosUser.password2){
-                await axios.post('http://localhost:3006/users/create', body);
+                await axios.post('https://afp-popstv-b.herokuapp.com//users/create', body);
                 history.push('/login')
             } else {
                 setErrors({...errors, eValidate: 'Register could not be completed., please try again.'});
