@@ -63,7 +63,7 @@ const ClientInfo = (props) => {
             userId : props.client?.id
         }
 
-        let res = await axios.post('http://localhost:3006/orders/findbyid', body, {headers:{'authorization':'Bearer ' + token}}); 
+        let res = await axios.post('https://afp-popstv-b.herokuapp.com/orders/findbyid', body, {headers:{'authorization':'Bearer ' + token}}); 
     
         setOrders(res.data)
 
@@ -91,7 +91,7 @@ const ClientInfo = (props) => {
             userId : id
         }
 
-        await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('https://afp-popstv-b.herokuapp.com/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
 
         history.push('allusers')
     }

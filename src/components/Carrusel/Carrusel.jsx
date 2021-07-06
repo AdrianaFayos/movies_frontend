@@ -35,7 +35,7 @@ const Carrusel = (props) => {
 
         try {
 
-            let res = await axios.get("http://localhost:3006/movies/popular");
+            let res = await axios.get("https://afp-popstv-b.herokuapp.com/movies/popular");
 
             setPopular({ ...popular, movies: res.data.results });
 

@@ -47,7 +47,7 @@ const UserHome = () => {
 
         try {
 
-            let res = await axios.get("http://localhost:3006/movies/toprated");
+            let res = await axios.get("https://afp-popstv-b.herokuapp.com/movies/toprated");
 
             setTopRated(res.data.results)
 
@@ -62,7 +62,7 @@ const UserHome = () => {
 
         try {
 
-            let res = await axios.get("http://localhost:3006/movies/upcoming");
+            let res = await axios.get("https://afp-popstv-b.herokuapp.com/movies/upcoming");
 
             setUpcoming(res.data.results)
 
@@ -76,7 +76,7 @@ const UserHome = () => {
 
         try {
 
-           let res = await axios.get("http://localhost:3006/movies/genre/"+type);
+           let res = await axios.get("https://afp-popstv-b.herokuapp.com/movies/genre/"+type);
 
            // setGenre({genre[type]: res.data.results})
            // In the previous way I only could save a value of genre object
@@ -113,18 +113,7 @@ const UserHome = () => {
                 <CarruselInfinit  filmType="action" type={genre.action}/>
 
                 <CarruselInfinit  filmType="comedy" type={genre.comedy}/>
-                
-                {/* <CarruselFilms filmType="comedy" filmType1={genre.comedy} />
-                
-                <CarruselFilms filmType="action" filmType1={genre.action} /> */}
-                
-                {/* <CarruselFilms filmType="family" filmType1={genre.family} /> */}
-                
-                {/* <CarruselFilms filmType="horror" filmType1={genre.horror} />
-
-                <CarruselFilms filmType="romance" filmType1={genre.romance} />
-                 */}
-                
+                                
             </div> 
 
         </div>

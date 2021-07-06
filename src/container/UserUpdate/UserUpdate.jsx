@@ -67,7 +67,7 @@ const UserUpdate = (props) => {
             
             }
     
-            let res = await axios.put('http://localhost:3006/users', body, {headers:{'authorization':'Bearer ' + token}});
+            let res = await axios.put('https://afp-popstv-b.herokuapp.com/users', body, {headers:{'authorization':'Bearer ' + token}});
 
     
             props.dispatch({type: UPDATE_USER, payload:res.data});
@@ -98,7 +98,7 @@ const UserUpdate = (props) => {
              }
 
              if(passwords.newPassword === passwords.newPassword2){
-             let res = await axios.put('http://localhost:3006/users/password', body, {headers:{'authorization':'Bearer ' + token}});
+             let res = await axios.put('https://afp-popstv-b.herokuapp.com/users/password', body, {headers:{'authorization':'Bearer ' + token}});
 
              props.dispatch({type: UPDATE_USER, payload:res.data});
              

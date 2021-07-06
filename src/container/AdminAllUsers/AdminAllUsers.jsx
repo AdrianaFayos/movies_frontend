@@ -38,7 +38,7 @@ const AdminAllUsers = (props) => {
 
             let token = props.credentials?.token;
     
-            let res = await axios.get('http://localhost:3006/users', {headers:{'authorization':'Bearer ' + token}});  
+            let res = await axios.get('https://afp-popstv-b.herokuapp.com/users', {headers:{'authorization':'Bearer ' + token}});  
         
             setUsers(res.data)
 
@@ -84,7 +84,7 @@ const AdminAllUsers = (props) => {
             userId : id
         }
 
-        await axios.post('http://localhost:3006/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('https://afp-popstv-b.herokuapp.com/users/deleteuser', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 
@@ -99,7 +99,7 @@ const AdminAllUsers = (props) => {
             userId : id
         }
 
-        await axios.post('http://localhost:3006/users/isadminupdate', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('https://afp-popstv-b.herokuapp.com/users/isadminupdate', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 

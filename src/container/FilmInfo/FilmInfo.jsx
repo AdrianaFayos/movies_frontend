@@ -39,7 +39,7 @@ const FilmInfo = (props) => {
                 moviePoster : props.movie?.poster_path,
             }
 
-            await axios.post("http://localhost:3006/orders/create", body, {
+            await axios.post("https://afp-popstv-b.herokuapp.com/orders/create", body, {
             headers: { authorization: "Bearer " + token }
             });
 
@@ -79,7 +79,7 @@ const FilmInfo = (props) => {
             movieId : props.movie?.id,
         }
 
-        let res = await axios.post("http://localhost:3006/movies/play", body)
+        let res = await axios.post("https://afp-popstv-b.herokuapp.com/movies/play", body)
 
         setVideo(res.data)
     }
@@ -99,7 +99,7 @@ const FilmInfo = (props) => {
             movieId : props.movie?.id,
             }
 
-            let res = await axios.post("http://localhost:3006/orders/findbymovie", body, {
+            let res = await axios.post("https://afp-popstv-b.herokuapp.com/orders/findbymovie", body, {
             headers: { authorization: "Bearer " + token }
             });
 

@@ -31,7 +31,7 @@ const AdminAllOrders = (props) => {
 
         let token = props.credentials?.token;
 
-        let res = await axios.get('http://localhost:3006/orders', {headers:{'authorization':'Bearer ' + token}});  
+        let res = await axios.get('https://afp-popstv-b.herokuapp.com/orders', {headers:{'authorization':'Bearer ' + token}});  
 
         setOrders(res.data)
 
@@ -47,7 +47,7 @@ const AdminAllOrders = (props) => {
             id : order.id
         }
 
-        await axios.post('http://localhost:3006/orders/deletebyadmin', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('https://afp-popstv-b.herokuapp.com/orders/deletebyadmin', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 

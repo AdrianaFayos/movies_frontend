@@ -23,7 +23,9 @@ const SearchMovie = (props) => {
     },[]);
 
     useEffect(() => {
-        searchMovies ()
+        setTimeout(() => {
+            searchMovies ()
+          }, 500);
     });
 
     const updateSearch = (e) => {
@@ -35,7 +37,7 @@ const SearchMovie = (props) => {
         if (searchMovie.movieTitle[0]){
             let movie = searchMovie.movieTitle;
 
-            let res = await axios.get('http://localhost:3006/movies/search/'+movie);
+            let res = await axios.get('https://afp-popstv-b.herokuapp.com/movies/search/'+movie);
         
             setMovies(res.data.results)
         }

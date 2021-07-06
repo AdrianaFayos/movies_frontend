@@ -38,7 +38,7 @@ const UserOrders = (props) => {
             id : order.id
         }
 
-        await axios.post('http://localhost:3006/orders/delete', body, {headers:{'authorization':'Bearer ' + token}})
+        await axios.post('https://afp-popstv-b.herokuapp.com/orders/delete', body, {headers:{'authorization':'Bearer ' + token}})
 
         window.location.reload();
 
@@ -52,7 +52,7 @@ const UserOrders = (props) => {
             userId : props.credentials?.user.id
         }
 
-        let res = await axios.post('http://localhost:3006/orders/findbyuser', body , {headers:{'authorization':'Bearer ' + token}});  
+        let res = await axios.post('https://afp-popstv-b.herokuapp.com/orders/findbyuser', body , {headers:{'authorization':'Bearer ' + token}});  
 
         setOrders(res.data)
 
@@ -62,7 +62,7 @@ const UserOrders = (props) => {
 
         let id = film.movieId
 
-        let res = await axios.get('http://localhost:3006/movies/searchid/' + id)
+        let res = await axios.get('https://afp-popstv-b.herokuapp.com/movies/searchid/' + id)
 
         props.dispatch({ type: MOVIE, payload: res.data });
 
